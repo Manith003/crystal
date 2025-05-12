@@ -4,6 +4,7 @@ import { CustomEase } from "https://cdn.skypack.dev/gsap/CustomEase";
 gsap.registerPlugin(CustomEase);
 CustomEase.create("hop", "0.9, 0,0.1,1");
 
+function loading(){
 document.addEventListener("DOMContentLoaded", () => {
     const tl = gsap.timeline({
         delay: 0.3,
@@ -84,3 +85,6 @@ document.addEventListener("DOMContentLoaded", () => {
         delay: 0.5,
     },"<");
 });
+}
+loading();
+
