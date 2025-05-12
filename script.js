@@ -44,46 +44,46 @@ document.addEventListener("DOMContentLoaded", () => {
     tl.to(".divider",{
         scaleY: "100%",
         duration: 1,
-        onComplete: () => gsap.to(".divider", {opacity: 0, duration: 0.4, delay: 0.3}),
+        onComplete: () => gsap.to(".divider", {opacity: 1, duration: 0.4, delay: 0.3}),
     });
 
-    tl.to("#word-1 h1",{
-        y: "120%",
-        duration: 1,
-        delay: 0.3
-    });
+    // tl.to("#word-1 h1",{
+    //     y: "120%",
+    //     duration: 1,
+    //     delay: 0.3
+    // });
 
-    tl.to("#word-2 h1",{
-        y: "-120%",
-        duration: 1,
-    },"<");
+    // tl.to("#word-2 h1",{
+    //     y: "-120%",
+    //     duration: 1,
+    // },"<");
 
-    tl.to(".block",{
-        clipPath: "polygon(0 0, 100% 0, 100% 0%, 0 0%)",
-        duration: 1,
-        stagger: 0.1,
-        delay: 0.75,
-        onStart: () => gsap.to(".hero-img", {scale: 1, duration: 2, ease: "hop"})
-    })
+    // tl.to(".block",{
+    //     clipPath: "polygon(0 0, 100% 0, 100% 0%, 0 0%)",
+    //     duration: 1,
+    //     stagger: 0.1,
+    //     delay: 0.75,
+    //     onStart: () => gsap.to(".hero-img", {scale: 1, duration: 2, ease: "hop"})
+    // })
 
-    tl.to([".nav",".line h1",".line p"],{
-        y:"0%",
-        duration: 1.5,
-        stagger: 0.2,
-    },"<");
+    // tl.to([".nav",".line h1",".line p"],{
+    //     y:"0%",
+    //     duration: 1.5,
+    //     stagger: 0.2,
+    // },"<");
 
-    tl.to([".cta", ".cta-icon"],{
-        scale: 1,
-        duration:1.5,
-        stagger: 0.75,
-        delay: 0.75
-    },"<");
+    // tl.to([".cta", ".cta-icon"],{
+    //     scale: 1,
+    //     duration:1.5,
+    //     stagger: 0.75,
+    //     delay: 0.75
+    // },"<");
 
-    tl.to(".cta-label p",{
-        y:"0%",
-        duration: 1.5,
-        delay: 0.5,
-    },"<");
+    // tl.to(".cta-label p",{
+    //     y:"0%",
+    //     duration: 1.5,
+    //     delay: 0.5,
+    // },"<");
 });
 }
 loading();
