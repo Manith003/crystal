@@ -349,6 +349,10 @@ nav > div {
   transform: translateY(120%);
 }
 
+.line p{
+  text-align: center;
+}
+
 .block {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
@@ -364,10 +368,10 @@ nav > div {
 
 @media (max-width: 900px) {
   h1 {
-    font-size: 2.5rem;
+    font-size:2.4rem;
   }
   h1 span {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
   }
 
   .nav-link {
