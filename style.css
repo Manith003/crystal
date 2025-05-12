@@ -110,10 +110,16 @@ nav > div {
   width: 100%;
   height: 100%;
   padding-top: 25svh;
+  /* background-color: red; */
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.5em;
+}
+
+.hero-copy{
+/* background-color: red; */
+padding: 0.5rem 1rem;
 }
 
 .cta {
