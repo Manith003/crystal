@@ -237,17 +237,14 @@ nav > div {
   padding-right: 0.25rem;
 }
 .word h1 {
-  font-size: 1.95rem;
-  /* letter-spacing: -1px; */
-  /* margin-right: 0.5em; */
+  font-size: 2rem;
+  letter-spacing: -1px;
+  /* padding-left: 0.2rem; */
   /* background-color: red; */
 }
 
 #word-1 h1 span {
-  /* width: fit-content; */
-  /* padding-left: 1rem; */
-  /* letter-spacing: 2px; */
-  font-size: 1.95rem;
+  font-size: 2.8rem;
   /* background-color: pink; */
 }
 
@@ -373,6 +370,13 @@ nav > div {
   h1 span {
     font-size: 2.2rem;
   }
+  .word h1 {
+    font-size: 1.8rem;
+  }
+  #word-1 h1 span {
+  font-size: 2.9rem;
+  /* background-color: pink; */
+}
   .nav-link {
     display: none;
   }
