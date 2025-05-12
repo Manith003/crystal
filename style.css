@@ -12,13 +12,27 @@
       format("opentype");
 }
 
+@font-face {
+  font-family: "Gilroy";
+  src: url("./gilroy/Gilroy-Medium.ttf") format("truetype"),
+    url("./gilroy/Gilroy-Bold.ttf") format("truetype"),
+    url("./gilroy/Gilroy-Light.ttf") format("truetype"),
+    url("./gilroy/Gilroy-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "PP Editorial Old";
+  src: url("./pp-editorial-old/ppeditorialold-regular.otf") format("opentype");
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 body {
-  font-family: "PP Neue Montreal", sans-serif;
+  font-family: "PP Neue Montreal";
+  font-family: "Gilroy";
 }
 
 main {
@@ -46,6 +60,8 @@ h1 span {
   font-weight: 500;
   font-style: italic;
   -webkit-font-smoothing: antialiased;
+  /* background-color: red; */
+  padding: 0 0.5rem 0 0;
 }
 
 a,
@@ -279,6 +295,7 @@ p {
 
 .count .digit h1 {
   font-family: "PP Editorial Old";
+  font-style: regular;
   font-size: 15rem;
   color: #fff;
   font-weight: 400;
