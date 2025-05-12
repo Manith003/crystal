@@ -34,28 +34,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
     tl.to(".spinner",{
         opacity: 0,
-        // duration: 0.1,
+        duration: 0.5,
     });
     tl.to(".word h1",{
         y: "0%",
         duration: 1,
     },"<");
 
-    tl.to(".divider",{
-        scaleY: "100%",
-        duration: 1,
-        onComplete: () => gsap.to(".divider", {opacity: 0, duration: 0.4, delay: 0.3}),
-    });
+    // tl.to(".divider",{
+    //     scaleY: "100%",
+    //     duration: 1,
+    //     onComplete: () => gsap.to(".divider", {opacity: 0, duration: 0.4, delay: 0.3}),
+    // });
 
     tl.to("#word-1 h1",{
         y: "120%",
-        duration: 1,
+        duration: 0.9,
         delay: 0.3
     });
 
     tl.to("#word-2 h1",{
         y: "-120%",
-        duration: 1,
+        duration: 0.9,
     },"<");
 
     tl.to(".block",{
