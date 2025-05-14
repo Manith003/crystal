@@ -37,7 +37,7 @@ body {
 
 main {
   width: 100vw;
-  height: 100dvh;
+  height: 100svh;
   overflow-x: hidden;
 }
 
@@ -78,7 +78,7 @@ p {
 .container {
   position: relative;
   width: 100vw;
-  height: 100dvh;
+  height: 100svh;
   overflow: hidden;
 }
 
@@ -86,7 +86,7 @@ p {
   position: absolute;
   top: 0;
   width: 100vw;
-  height: 100dvh;
+  height: 100svh;
   z-index: -1;
 }
 
