@@ -37,7 +37,7 @@ body {
 
 main {
   width: 100vw;
-  height: 100svh;
+  height: 100dvh;
   overflow-x: hidden;
 }
 
@@ -61,8 +61,7 @@ h1 span {
   font-style: italic;
   font-size: 4.5rem;
   -webkit-font-smoothing: antialiased;
-  /* background-color: red; */
-  padding: 0 0.9rem 0 0;
+  padding: 0 0.7rem 0 0;
 }
 
 a,
@@ -79,7 +78,7 @@ p {
 .container {
   position: relative;
   width: 100vw;
-  height: 100svh;
+  height: 100dvh;
   overflow: hidden;
 }
 
@@ -87,7 +86,7 @@ p {
   position: absolute;
   top: 0;
   width: 100vw;
-  height: 100svh;
+  height: 100dvh;
   z-index: -1;
 }
 
@@ -123,12 +122,12 @@ nav > div {
   /* background-color: green; */
 }
 
-.btn {
+.menu-btn {
   display: flex;
   justify-content: flex-end;
 }
 
-.btn a {
+.menu-btn a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -200,7 +199,7 @@ nav > div {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100svh;
+  height: 100dvh;
   overflow: hidden;
   z-index: 2;
   pointer-events: none;
@@ -234,7 +233,7 @@ nav > div {
 #word1 {
   position: relative;
   left: -0.5rem;
-  padding-right: 0.25rem;
+  padding-right: 0.25rem;;
 }
 /* .word h1 {
   font-size: 2rem;
@@ -333,6 +332,10 @@ nav > div {
   padding-left: 0.7rem;
 }
 
+/* .line #packaging{
+  margin-right: -0.3rem;
+} */
+
 .line h1,
 .line p,
 .cta-label p,
@@ -372,6 +375,7 @@ nav > div {
   }
   h1 span {
     font-size: 2.5rem;
+    padding:  0 0.3rem 0 0;
   }
 
   .nav-link {
