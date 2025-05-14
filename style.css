@@ -115,9 +115,7 @@ nav > div {
 
 .nav-link {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 3rem;
+  gap: 6rem;
   cursor: pointer;
   /* background-color: green; */
 }
@@ -138,6 +136,10 @@ nav > div {
   background-color: #fff;
   border-radius: 40px;
   cursor: pointer;
+}
+
+#menu{
+  display: none;
 }
 
 .header {
@@ -381,6 +383,15 @@ nav > div {
   .nav-link {
     display: none;
   }
+
+  #cart{
+    display: none;
+  }
+
+  #menu{
+    display: flex;
+  }
+
   .cta {
     width: 90%;
   }
