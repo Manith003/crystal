@@ -141,7 +141,7 @@ nav > div {
   width: 40px;
   height: 2px;
   background-color: #ffffff;
-  left: 0;
+  /* left: 0; */
   transition: all 0.3s ease;
 }
 .burger::before {
@@ -423,11 +423,12 @@ nav > div {
   }
 
   .nav {
-    padding: 1.75em 2.3em 0 2em;
+    padding: 1.75em 3em 0 1.3em;
   }
 
   .menu-item a {
-    font-size: 4rem;
+    font-size: 3rem;
+    line-height: 0.8;
   }
 
   .cta {
