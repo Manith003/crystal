@@ -111,7 +111,6 @@ function loading() {
     );
   });
 }
-
 if (!sessionStorage.getItem("hasVisited")) {
   loading(); 
   sessionStorage.setItem("hasVisited", "true");
