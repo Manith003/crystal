@@ -380,6 +380,8 @@ nav > div {
 
 .line h1 {
   padding-left: 0.7rem;
+  /* background-color: red; */
+  padding: 0.3rem;
 }
 
 .line h1,
