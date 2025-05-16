@@ -138,10 +138,6 @@ nav > div {
   cursor: pointer;
 }
 
-#menu{
-  display: none;
-}
-
 .header {
   width: 100%;
   height: 100%;
@@ -381,14 +377,6 @@ nav > div {
 
   .nav-link {
     display: none;
-  }
-
-  #cart {
-    display: none;
-  }
-
-  #menu {
-    display: flex;
   }
 
   .cta {
