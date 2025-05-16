@@ -402,8 +402,8 @@ nav > div {
 
 .line p {
   text-align: center;
-  color: #141412;
-  font-weight: 700;
+  /* color: #141412; */
+  font-weight: 500;
 }
 
 .block {
