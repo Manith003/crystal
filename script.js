@@ -55,12 +55,6 @@ function loading() {
       "<"
     );
 
-    // tl.to(".divider",{
-    //     scaleY: "100%",
-    //     duration: 1,
-    //     onComplete: () => gsap.to(".divider", {opacity: 0, duration: 0.4, delay: 0.3}),
-    // });
-
     tl.to("#word-1 h1", {
       y: "120%",
       duration: 0.9,
@@ -118,3 +112,69 @@ function loading() {
   });
 }
 loading();
+
+function nav() {
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggleButton = document.querySelector(".burger");
+    const overlay2 = document.querySelector(".overlay-2");
+    const menuLinks = document.querySelectorAll(".menu-item a");
+    let isOpen = false;
+
+    gsap.set(overlay2, {
+      top: "0%",
+      opacity: 1,
+      clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)"
+    });
+
+    let tl = gsap.timeline({ paused: true });
+
+    
+    tl.to(overlay2, {
+      clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+      duration: 0.8,
+      ease: "power3.inOut"
+    });
+
+    
+    tl.fromTo(
+      ".menu-item a",
+      {
+        y: 60,
+        opacity: 0
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.7,
+        stagger: 0.12,
+        ease: "power3.out"
+      },
+      "-=0.5"
+    );
+
+    // Burger click
+    toggleButton.addEventListener("click", function () {
+      toggleButton.classList.toggle("active");
+      overlay2.classList.toggle("open");
+
+      if (isOpen) {
+        tl.reverse(); // Animate overlay and menu items out (bottom to top)
+      } else {
+        tl.play();    // Animate overlay and menu items in (top to bottom)
+      }
+      isOpen = !isOpen;
+    });
+
+    // Also close menu with animation when clicking a menu item
+    menuLinks.forEach(link => {
+      link.addEventListener("click", function () {
+        toggleButton.classList.remove("active");
+        overlay2.classList.remove("open");
+        tl.reverse();
+        isOpen = false;
+      });
+    });
+  });
+}
+
+nav();

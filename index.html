@@ -74,9 +74,6 @@
                 </div>
             </div>
         </div> 
-
-
-
         <div class="container">
             <div class="hero-img">
                 <img src="./Render_Mockup_3840_2160_2025-05-15.jpg"
@@ -87,24 +84,35 @@
                     <a href="#">CrystalPackaging</a>
                 </div>
                 <div class="nav-link">
-                    <a href="#">PRODUCTS</a>
+                    <a href="./product.html">PRODUCTS</a>
                     <a href="#">OUR STORY</a>
                     <a href="#">CUSTOM WORK</a>
                     <a href="#">INSPIRATION</a>
                 </div>
                 <div class="menu-btn">
-                    <a id="menu" href="#"><ion-icon name="menu-outline"></ion-icon></a>
-                    <!-- <a id="cart" href="#"><ion-icon name="cart-outline"></ion-icon></a> -->
-
+                    <button class="burger"></button>
+                </div>
+                <div class="overlay-2">
+                    <div class="overlay-menu">
+                        <div class="menu-item">
+                            <p id="active"><a href="index.html">Home</a></p>
+                        </div>
+                        <div class="menu-item">
+                            <p><a href="./work.html">Account</a></p>
+                        </div>
+                        <div class="menu-item">
+                            <p><a href="#">About</a></p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <div class="header">
                 <div class="hero-copy">
-                    <div class="line">
+                    <div class="line" id="line1">
                         <h1><span>Packaging</span> that speaks.</h1>
                     </div>
-                    <div class="line">
+                    <div class="line" id="line2">
                         <h1>Built for your <span>brand.</span></h1>
                     </div>
                 </div>
@@ -128,6 +136,7 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/CSSRulePlugin.min.js"></script>
     <script type="module" src="script.js"></script>
 </body>
 
