@@ -15,32 +15,33 @@ function loading() {
       },
     });
 
-    const counts = document.querySelectorAll(".count");
-    counts.forEach((count, index) => {
-      const digits = count.querySelectorAll(".digit h1");
+    const counts = document.querySelector(".counter");
+   // counts.forEach((count, index) => {
+      // const digits = count.querySelectorAll(".digit h1");
 
-      tl.to(
-        digits,
-        {
-          y: "0%",
-          duration: 1,
-          stagger: 0.075,
-        },
-        index * 1
-      );
+      // tl.to(
+      //   digits,
+      //   {
+      //     y: "0%",
+      //     duration: 1,
+      //     stagger: 0.075,
+      //   },
+      //   index * 1
+      // );
 
-      if (index < counts.length) {
-        tl.to(
-          digits,
-          {
-            y: "-100%",
-            duration: 1,
-            stagger: 0.075,
-          },
-          index * 1 + 1
-        );
-      }
-    });
+      // if (index < counts.length) {
+      //   tl.to(
+      //     digits,
+      //     {
+      //       y: "-100%",
+      //       duration: 1,
+      //       stagger: 0.075,
+      //     },
+      //     index * 1 + 1
+      //   );
+      // }
+      
+    //});//
 
     tl.to(".spinner", {
       opacity: 0,
@@ -111,24 +112,25 @@ function loading() {
     );
   });
 }
-if (!sessionStorage.getItem("hasVisited")) {
-  loading(); 
-  sessionStorage.setItem("hasVisited", "true");
-} else {
-  document.addEventListener("DOMContentLoaded", () => {
-    gsap.set(".spinner", { opacity: 0 });
-    gsap.set(".word h1", { y: "120%" });
-    gsap.set("#word-1 h1", { y: "120%" });
-    gsap.set("#word-2 h1", { y: "-120%" });
-    gsap.set(".block", {
-      clipPath: "polygon(0 0, 0 0, 0 0, 0 0)",
-    });
-    gsap.set(".hero-img", { scale: 1 });
-    gsap.set([".nav", ".line h1", ".line p"], { y: "0%" });
-    gsap.set([".cta", ".cta-icon"], { scale: 1 });
-    gsap.set(".cta-label p", { y: "0%" });
-  });
-}
+loading();
+// if (!sessionStorage.getItem("hasVisited")) {
+//   loading(); 
+//   sessionStorage.setItem("hasVisited", "true");
+// } else {
+//   document.addEventListener("DOMContentLoaded", () => {
+//     gsap.set(".spinner", { opacity: 0 });
+//     gsap.set(".word h1", { y: "120%" });
+//     gsap.set("#word-1 h1", { y: "120%" });
+//     gsap.set("#word-2 h1", { y: "-120%" });
+//     gsap.set(".block", {
+//       clipPath: "polygon(0 0, 0 0, 0 0, 0 0)",
+//     });
+//     gsap.set(".hero-img", { scale: 1 });
+//     gsap.set([".nav", ".line h1", ".line p"], { y: "0%" });
+//     gsap.set([".cta", ".cta-icon"], { scale: 1 });
+//     gsap.set(".cta-label p", { y: "0%" });
+//   });
+// }
 
 
 function nav() {

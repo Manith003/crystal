@@ -338,26 +338,26 @@ nav > div {
   z-index: 2;
 }
 
-.count {
+/* .count {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
-}
+} */
 
-.digit {
+/* .digit {
   flex: 1;
   padding-top: 1rem;
-}
-
+} */
+/* 
 .count .digit h1 {
   font-family: "PP Editorial Old";
   font-style: regular;
   font-size: 15rem;
   color: #fff;
   font-weight: 400;
-}
+} */
 
 .nav {
   transform: translateY(-120%);
@@ -374,8 +374,7 @@ nav > div {
 .line,
 .cta-label,
 .word,
-.count,
-.digit {
+.counter {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   z-index: -1;
 }
@@ -386,10 +385,13 @@ nav > div {
   padding: 0.3rem;
 }
 
+.counter{
+  opacity: 0;
+}
+
 .line h1,
 .line p,
-.cta-label p,
-.count .digit h1 {
+.cta-label p{
   position: relative;
   transform: translateY(120%);
   will-change: transform;
