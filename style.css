@@ -304,7 +304,7 @@ nav > div {
 }
 
 #word-2 h1 {
-  color: orangered;
+  color: #EA611B;
 }
 
 .spinner-container {
@@ -330,34 +330,15 @@ nav > div {
   }
 }
 
-.counter {
+.loading-image {
+  width: 600px; /* Adjust as needed */
+  height: auto;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
 }
-
-/* .count {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-} */
-
-/* .digit {
-  flex: 1;
-  padding-top: 1rem;
-} */
-/* 
-.count .digit h1 {
-  font-family: "PP Editorial Old";
-  font-style: regular;
-  font-size: 15rem;
-  color: #fff;
-  font-weight: 400;
-} */
 
 .nav {
   transform: translateY(-120%);
@@ -373,8 +354,7 @@ nav > div {
 
 .line,
 .cta-label,
-.word,
-.counter {
+.word{
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   z-index: -1;
 }
@@ -406,7 +386,6 @@ nav > div {
 
 .line p {
   text-align: center;
-  /* color: #141412; */
   font-weight: 500;
 }
 
@@ -445,6 +424,11 @@ nav > div {
 
   .cta {
     width: 90%;
+  }
+  .loading-image {
+    width: 350px;
+    /* rotate: 3deg; */
+    left: 53%;
   }
 }
 

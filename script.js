@@ -1,10 +1,8 @@
 import { gsap } from "https://cdn.skypack.dev/gsap";
 import { CustomEase } from "https://cdn.skypack.dev/gsap/CustomEase";
 
-
 gsap.registerPlugin(CustomEase);
 CustomEase.create("hop", "0.9, 0,0.1,1");
-
 
 function loading() {
   window.addEventListener("load", () => {
@@ -13,40 +11,33 @@ function loading() {
       defaults: {
         ease: "hop",
       },
+      onComplete: () => {
+        // Make sure loading container is completely removed after animation
+        document.querySelector(".loading-image").style.display = "none";
+      }
     });
 
-    const counts = document.querySelector(".counter");
-   // counts.forEach((count, index) => {
-      // const digits = count.querySelectorAll(".digit h1");
-
-      // tl.to(
-      //   digits,
-      //   {
-      //     y: "0%",
-      //     duration: 1,
-      //     stagger: 0.075,
-      //   },
-      //   index * 1
-      // );
-
-      // if (index < counts.length) {
-      //   tl.to(
-      //     digits,
-      //     {
-      //       y: "-100%",
-      //       duration: 1,
-      //       stagger: 0.075,
-      //     },
-      //     index * 1 + 1
-      //   );
-      // }
-      
-    //});//
+    gsap.set(".loading-image", { opacity: 0 });
+    tl.to(".loading-image", {
+      opacity: 1,
+      duration: 0.5,
+    });
+    tl.to(".loading-image", {
+      opacity: 0.1,
+      duration: 0.5,
+      repeat: 4,
+      yoyo: true,
+      ease: "power1.inOut",
+    });
+    tl.to(".loading-image", {
+      opacity: 0,
+      duration: 0.5,
+    },'anim');
 
     tl.to(".spinner", {
       opacity: 0,
       duration: 0.5,
-    });
+    },'anim');
     tl.to(
       ".word h1",
       {
@@ -112,26 +103,27 @@ function loading() {
     );
   });
 }
-loading();
-// if (!sessionStorage.getItem("hasVisited")) {
-//   loading(); 
-//   sessionStorage.setItem("hasVisited", "true");
-// } else {
-//   document.addEventListener("DOMContentLoaded", () => {
-//     gsap.set(".spinner", { opacity: 0 });
-//     gsap.set(".word h1", { y: "120%" });
-//     gsap.set("#word-1 h1", { y: "120%" });
-//     gsap.set("#word-2 h1", { y: "-120%" });
-//     gsap.set(".block", {
-//       clipPath: "polygon(0 0, 0 0, 0 0, 0 0)",
-//     });
-//     gsap.set(".hero-img", { scale: 1 });
-//     gsap.set([".nav", ".line h1", ".line p"], { y: "0%" });
-//     gsap.set([".cta", ".cta-icon"], { scale: 1 });
-//     gsap.set(".cta-label p", { y: "0%" });
-//   });
-// }
-
+if (!sessionStorage.getItem("hasVisited")) {
+  loading();
+  sessionStorage.setItem("hasVisited", "true");
+} else {
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.querySelector(".loading-image")) {
+      document.querySelector(".loading-image").style.display = "none";
+    }
+    gsap.set(".spinner",{ opacity: 0 });
+    gsap.set(".word h1", { y: "120%" });
+    gsap.set("#word-1 h1", { y: "120%" });
+    gsap.set("#word-2 h1", { y: "-120%" });
+    gsap.set(".block", {
+      clipPath: "polygon(0 0, 0 0, 0 0, 0 0)",
+    });
+    gsap.set(".hero-img", { scale: 1 });
+    gsap.set([".nav", ".line h1", ".line p"], { y: "0%" });
+    gsap.set([".cta", ".cta-icon"], { scale: 1 });
+    gsap.set(".cta-label p", { y: "0%" });
+  });
+}
 
 function nav() {
   document.addEventListener("DOMContentLoaded", function () {
@@ -145,36 +137,39 @@ function nav() {
     gsap.set(overlay2, {
       top: "0%",
       opacity: 1,
-      clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)"
+      clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
     });
 
     let tl = gsap.timeline({ paused: true });
 
-
     tl.to(overlay2, {
       clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
       duration: 0.9,
-      ease: "power3.inOut"
+      ease: "power3.inOut",
     });
 
-   tl.to(pageElements, {
-      opacity: 0,
-      duration: 0.1,
-      ease: "power2.inOut"
-    }, "-=0.6");
-    
+    tl.to(
+      pageElements,
+      {
+        opacity: 0,
+        duration: 0.1,
+        ease: "power2.inOut",
+      },
+      "-=0.6"
+    );
+
     tl.fromTo(
       ".menu-item a",
       {
         y: 60,
-        opacity: 0
+        opacity: 0,
       },
       {
         y: 0,
         opacity: 1,
         duration: 0.7,
         stagger: 0.12,
-        ease: "power3.out"
+        ease: "power3.out",
       },
       "-=0.5"
     );
@@ -187,18 +182,26 @@ function nav() {
       if (isOpen) {
         tl.reverse(); // Animate overlay and menu items out (bottom to top)
       } else {
-        tl.play();    // Animate overlay and menu items in (top to bottom)
+        tl.play(); // Animate overlay and menu items in (top to bottom)
       }
       isOpen = !isOpen;
     });
 
     // Also close menu with animation when clicking a menu item
-    menuLinks.forEach(link => {
-      link.addEventListener("click", function () {
+    menuLinks.forEach((link) => {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+      
         toggleButton.classList.remove("active");
         overlay2.classList.remove("open");
         tl.reverse();
         isOpen = false;
+
+        const href = link.getAttribute("href");
+        
+        setTimeout(() => {
+          window.location.href = href;
+        }, 300);
       });
     });
   });
