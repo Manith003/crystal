@@ -115,7 +115,8 @@ nav > div {
 
 .nav-link {
   display: flex;
-  gap: 6rem;
+  gap: 7rem;
+  margin-right: 4%;
   cursor: pointer;
 }
 
@@ -127,7 +128,8 @@ nav > div {
 .burger {
   position: absolute;
   top: 50%;
-  width: 48px;
+  left: 90%;
+    right: 3%;
   height: 20px;
   border: none;
   background: none;
@@ -147,14 +149,14 @@ nav > div {
 }
 .burger::before {
   top: 3px;
-  right: 5%;
+  right: 15%;
 }
 .burger::after {
   bottom: 3px;
-  right: 5%;
+  right: 15%;
 }
 .burger.active::before {
-  transform: translateY(5px) rotate(45deg);
+  transform: translateY(4px) rotate(45deg);
 }
 .burger.active::after {
   transform: translateY(-8px) rotate(-45deg);
@@ -398,7 +400,7 @@ nav > div {
   will-change: transform;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   h1 {
     font-size: 2.4rem;
   }
@@ -408,6 +410,7 @@ nav > div {
   }
   .burger {
     left: 80%;
+    right: 3%;
   }
   .nav-link {
     display: none;
@@ -415,6 +418,7 @@ nav > div {
 
   .nav {
     padding: 1.75em 3em 0 1.3em;
+    /* background-color: red; */
   }
 
   .menu-item a {
