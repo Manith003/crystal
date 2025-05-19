@@ -450,12 +450,14 @@ nav > div {
 
 .marquee {
   position: relative;
-  width: 100%;
+  width: 90%;
+  margin-left: 5%;
   min-height: 20svh;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  /* background-color: red; */
 }
 
 .marquee-content {
@@ -526,5 +528,5 @@ nav > div {
 .product{
   height: 100svh;
   width: 100vw;
-  background-color: red;
+  /* background-color: red; */
 }
