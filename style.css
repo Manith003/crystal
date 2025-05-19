@@ -115,7 +115,7 @@ nav > div {
 
 .nav-link {
   display: flex;
-  gap: 7rem;
+  gap: 8rem;
   margin-right: 4%;
   cursor: pointer;
 }
@@ -129,7 +129,7 @@ nav > div {
   position: absolute;
   top: 50%;
   left: 90%;
-    right: 3%;
+  right: 3%;
   height: 20px;
   border: none;
   background: none;
@@ -306,7 +306,7 @@ nav > div {
 }
 
 #word-2 h1 {
-  color: #EA611B;
+  color: #ea611b;
 }
 
 .spinner-container {
@@ -356,7 +356,7 @@ nav > div {
 
 .line,
 .cta-label,
-.word{
+.word {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   z-index: -1;
 }
@@ -367,13 +367,13 @@ nav > div {
   padding: 0.3rem;
 }
 
-.counter{
+.counter {
   opacity: 0;
 }
 
 .line h1,
 .line p,
-.cta-label p{
+.cta-label p {
   position: relative;
   transform: translateY(120%);
   will-change: transform;
@@ -465,7 +465,7 @@ nav > div {
   filter: grayscale(1);
 }
 
-.marquee::before{
+.marquee::before {
   content: "";
   height: 20svh;
   width: 10%;
@@ -476,7 +476,7 @@ nav > div {
   z-index: 1;
 }
 
-.marquee::after{
+.marquee::after {
   content: "";
   height: 20svh;
   width: 10%;
@@ -514,8 +514,7 @@ nav > div {
   }
 }
 
-
-.product{
+.product {
   height: 100svh;
   width: 100vw;
   /* background-color: red; */
