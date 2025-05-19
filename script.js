@@ -138,6 +138,8 @@ function nav() {
     const menuLinks = document.querySelectorAll(".menu-item a");
     let isOpen = false;
 
+    const pageElements = [".cta", ".hero-copy"];
+
     gsap.set(overlay2, {
       top: "0%",
       opacity: 1,
@@ -146,13 +148,18 @@ function nav() {
 
     let tl = gsap.timeline({ paused: true });
 
-    
+
     tl.to(overlay2, {
       clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-      duration: 0.8,
+      duration: 0.9,
       ease: "power3.inOut"
     });
 
+   tl.to(pageElements, {
+      opacity: 0,
+      duration: 0.1,
+      ease: "power2.inOut"
+    }, "-=0.6");
     
     tl.fromTo(
       ".menu-item a",
