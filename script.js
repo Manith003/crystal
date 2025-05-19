@@ -188,22 +188,14 @@ function nav() {
     });
 
     // Also close menu with animation when clicking a menu item
-    // menuLinks.forEach((link) => {
-    //   link.addEventListener("click", function (e) {
-    //     e.preventDefault();
-      
-    //     toggleButton.classList.remove("active");
-    //     overlay2.classList.remove("open");
-    //     tl.reverse();
-    //     isOpen = false;
-
-    //     const href = link.getAttribute("href");
-        
-    //     setTimeout(() => {
-    //       window.location.href = href;
-    //     }, 300);
-    //   });
-    // });
+    menuLinks.forEach((link) => {
+      link.addEventListener("click", function () {
+        toggleButton.classList.remove("active");
+        overlay2.classList.remove("open");
+        tl.reverse();
+        isOpen = false;
+      });
+    });
   });
 }
 
