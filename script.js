@@ -7,7 +7,7 @@ CustomEase.create("hop", "0.9, 0,0.1,1");
 
 
 function loading() {
-  document.addEventListener("DOMContentLoaded", () => {
+  window.addEventListener("load", () => {
     const tl = gsap.timeline({
       delay: 0.3,
       defaults: {
