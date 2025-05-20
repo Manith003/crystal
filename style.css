@@ -91,7 +91,7 @@ p {
 }
 
 .nav {
-  position: absolute; 
+  position: absolute;
   top: 0;
   width: 100vw;
   padding: 1.75em 4em 0 2em;
@@ -456,10 +456,10 @@ nav > div {
 
 .marquee-content {
   display: flex;
-  gap: 2rem;
+  gap: 6rem;
   flex-shrink: 0;
   animation: marquee 15s linear infinite;
-  padding: 0 1rem;
+  padding: 0 3rem;
 }
 
 .markq {
@@ -467,6 +467,7 @@ nav > div {
   height: 100px;
   object-fit: contain;
   filter: grayscale(1);
+  aspect-ratio: 3/4;
 }
 
 .marquee::before {
@@ -515,6 +516,10 @@ nav > div {
   .markq {
     width: 80px;
     filter: grayscale(0);
+  }
+  .marquee-content {
+    gap: 2rem;
+    padding: 0 1rem;
   }
 }
 

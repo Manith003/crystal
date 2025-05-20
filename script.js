@@ -103,28 +103,28 @@ function loading() {
     );
   });
 }
-loading();
-// if (!sessionStorage.getItem("hasVisited")) {
-//   loading();
-//   sessionStorage.setItem("hasVisited", "true");
-// } else {
-//   document.addEventListener("DOMContentLoaded", () => {
-//     if (document.querySelector(".loading-image")) {
-//       document.querySelector(".loading-image").style.display = "none";
-//     }
-//     gsap.set(".spinner",{ opacity: 0 });
-//     gsap.set(".word h1", { y: "120%" });
-//     gsap.set("#word-1 h1", { y: "120%" });
-//     gsap.set("#word-2 h1", { y: "-120%" });
-//     gsap.set(".block", {
-//       clipPath: "polygon(0 0, 0 0, 0 0, 0 0)",
-//     });
-//     gsap.set(".hero-img", { scale: 1 });
-//     gsap.set([".nav", ".line h1", ".line p"], { y: "0%" });
-//     gsap.set([".cta", ".cta-icon"], { scale: 1 });
-//     gsap.set(".cta-label p", { y: "0%" });
-//   });
-// }
+
+if (!sessionStorage.getItem("hasVisited")) {
+  loading();
+  sessionStorage.setItem("hasVisited", "true");
+} else {
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.querySelector(".loading-image")) {
+      document.querySelector(".loading-image").style.display = "none";
+    }
+    gsap.set(".spinner",{ opacity: 0 });
+    gsap.set(".word h1", { y: "120%" });
+    gsap.set("#word-1 h1", { y: "120%" });
+    gsap.set("#word-2 h1", { y: "-120%" });
+    gsap.set(".block", {
+      clipPath: "polygon(0 0, 0 0, 0 0, 0 0)",
+    });
+    gsap.set(".hero-img", { scale: 1 });
+    gsap.set([".nav", ".line h1", ".line p"], { y: "0%" });
+    gsap.set([".cta", ".cta-icon"], { scale: 1 });
+    gsap.set(".cta-label p", { y: "0%" });
+  });
+}
 
 function nav() {
   document.addEventListener("DOMContentLoaded", function () {
