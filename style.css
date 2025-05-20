@@ -91,7 +91,7 @@ p {
 }
 
 .nav {
-  position: absolute;
+  position: absolute; 
   top: 0;
   width: 100vw;
   padding: 1.75em 4em 0 2em;
@@ -99,6 +99,10 @@ p {
   align-items: center;
   justify-content: space-between;
   will-change: transform;
+  z-index: 98;
+  /* background-color: rgba(20, 20, 18, 0.8);  */
+  /* backdrop-filter: blur(5px);  */
+  /* background-color: #141412; */
 }
 
 nav > div {
@@ -432,7 +436,7 @@ nav > div {
   .loading-image {
     width: 350px;
     /* rotate: 3deg; */
-    left: 53%;
+    left: 51%;
   }
 }
 
@@ -454,7 +458,7 @@ nav > div {
   display: flex;
   gap: 2rem;
   flex-shrink: 0;
-  animation: marquee 19s linear infinite;
+  animation: marquee 15s linear infinite;
   padding: 0 1rem;
 }
 

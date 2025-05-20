@@ -20,12 +20,12 @@ function loading() {
     gsap.set(".loading-image", { opacity: 0 });
     tl.to(".loading-image", {
       opacity: 1,
-      duration: 0.5,
+      duration: 0.6,
     });
     tl.to(".loading-image", {
-      opacity: 0.1,
+      opacity: 0.5,
       duration: 0.5,
-      repeat: 4,
+      repeat: 3,
       yoyo: true,
       ease: "power1.inOut",
     });
@@ -103,27 +103,28 @@ function loading() {
     );
   });
 }
-if (!sessionStorage.getItem("hasVisited")) {
-  loading();
-  sessionStorage.setItem("hasVisited", "true");
-} else {
-  document.addEventListener("DOMContentLoaded", () => {
-    if (document.querySelector(".loading-image")) {
-      document.querySelector(".loading-image").style.display = "none";
-    }
-    gsap.set(".spinner",{ opacity: 0 });
-    gsap.set(".word h1", { y: "120%" });
-    gsap.set("#word-1 h1", { y: "120%" });
-    gsap.set("#word-2 h1", { y: "-120%" });
-    gsap.set(".block", {
-      clipPath: "polygon(0 0, 0 0, 0 0, 0 0)",
-    });
-    gsap.set(".hero-img", { scale: 1 });
-    gsap.set([".nav", ".line h1", ".line p"], { y: "0%" });
-    gsap.set([".cta", ".cta-icon"], { scale: 1 });
-    gsap.set(".cta-label p", { y: "0%" });
-  });
-}
+loading();
+// if (!sessionStorage.getItem("hasVisited")) {
+//   loading();
+//   sessionStorage.setItem("hasVisited", "true");
+// } else {
+//   document.addEventListener("DOMContentLoaded", () => {
+//     if (document.querySelector(".loading-image")) {
+//       document.querySelector(".loading-image").style.display = "none";
+//     }
+//     gsap.set(".spinner",{ opacity: 0 });
+//     gsap.set(".word h1", { y: "120%" });
+//     gsap.set("#word-1 h1", { y: "120%" });
+//     gsap.set("#word-2 h1", { y: "-120%" });
+//     gsap.set(".block", {
+//       clipPath: "polygon(0 0, 0 0, 0 0, 0 0)",
+//     });
+//     gsap.set(".hero-img", { scale: 1 });
+//     gsap.set([".nav", ".line h1", ".line p"], { y: "0%" });
+//     gsap.set([".cta", ".cta-icon"], { scale: 1 });
+//     gsap.set(".cta-label p", { y: "0%" });
+//   });
+// }
 
 function nav() {
   document.addEventListener("DOMContentLoaded", function () {
