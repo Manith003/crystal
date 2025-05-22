@@ -25,6 +25,12 @@
   src: url("./pp-editorial-old/ppeditorialold-regular.otf") format("opentype");
 }
 
+@font-face {
+  font-family: "evange";
+  src: url("./evange-danve-font-1747893656-0/EvangeDanveDemoRegular-BF682e8ce70f298.ttf")
+      format("truetype");
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -542,7 +548,8 @@ nav > div {
   color: black;
   text-align: center;
   letter-spacing: -1px;
-  font-family: PP Neue Montreal;
+  font-family: evange;
+  font-weight: 900;
   padding: 0.5rem;
 }
 
@@ -660,4 +667,10 @@ nav > div {
   .product-container {
     gap: 5rem;
   }
+}
+
+.product2{
+  height: 100vh;
+  width: 100vw;
+  background-color: red;
 }
