@@ -12,7 +12,6 @@ function loading() {
         ease: "hop",
       },
       onComplete: () => {
-        // Make sure loading container is completely removed after animation
         document.querySelector(".loading-image").style.display = "none";
       }
     });
