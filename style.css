@@ -526,10 +526,12 @@ nav > div {
 }
 /*--------------------------adding product-------------------------*/
 .product {
-  min-height: 100%;
+  min-height: 50%;
   width: 100vw;
-  padding: 1rem 6rem;
-  margin-top: 2rem;
+  padding: 1rem 0rem;
+  margin-top: 1rem;
+  overflow: hidden;
+  /* background-color: red; */
 }
 
 .product-title {
@@ -541,7 +543,7 @@ nav > div {
   text-align: center;
   letter-spacing: -1px;
   font-family: PP Neue Montreal;
-  font-weight: 100;
+  padding: 0.5rem;
 }
 
 .product-container {
@@ -549,7 +551,7 @@ nav > div {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 6rem;
+  gap: 3rem;
   flex-shrink: 0;
   padding: 1rem;
   overflow-x: auto;
@@ -557,20 +559,19 @@ nav > div {
 
 .product-items {
   width: 400px;
-  height: 600px;
+  height: 650px;
   position: relative;
   overflow: hidden;
-  flex-shrink: 0;
-  /* background-color: red; */
+  flex: 0 0 auto;
 }
 
 .productImg {
-  width: 100%;
+  width: 99%;
   height: 70%;
   object-fit: cover;
 }
 
-.desc{
+.desc {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -581,7 +582,6 @@ nav > div {
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 0;
-  
 }
 
 .itemh1 {
@@ -598,7 +598,7 @@ nav > div {
   padding: 0.5rem;
 }
 
-.descriptionp{
+.descriptionp {
   font-size: 1rem;
   color: #000;
   padding: 0.5rem;
@@ -606,17 +606,58 @@ nav > div {
   text-transform: lowercase;
 }
 
+.prod-btn{
+  margin-top: 1rem;
+  width: 99%;
+  padding: 1rem;
+  background-color: #141412;
+  color: #fff;
+  border: none;
+  border-radius: 4rem;
+  cursor: pointer;
+}
 
 @media (max-width: 900px) {
-  .titleh1{
-    font-size: 1.6rem;
+  .product{
+    padding: 0.5rem 0rem;
+    margin-top: 0;
   }
-  .product-container {
-   flex-direction: column;
+  .titleh1 {
+    font-size: 2.6rem;
+    letter-spacing: 0;
   }
   .product-items {
     width: 300px;
-    height: 500px;
+    height: 550px;
+  }
+
+  .productImg{
+    width: 100%;
+    height: 60%;
+  }
+
+  .product-container {
+    justify-content: flex-start;
+    padding: 0.1rem;
+    gap: 2rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: #141412 #fff;
+  }
+}
+
+@media (max-width: 600px) {
+  .product-container {
+    gap: 1rem;
   }
   
+}
+
+@media (min-width:1000px) {
+  .product-container {
+    gap: 5rem;
+  }
 }
