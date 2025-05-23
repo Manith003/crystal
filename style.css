@@ -624,6 +624,12 @@ nav > div {
   cursor: pointer;
 }
 
+@media (max-width:1900px) {
+  .product-container{
+    justify-content: flex-start;
+  }
+}
+
 @media (max-width: 900px) {
   .product{
     padding: 0.5rem 0rem;
