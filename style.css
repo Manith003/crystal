@@ -57,7 +57,7 @@ img {
 
 h1 {
   text-align: center;
-  color: #fff;
+  /* color: #fff; */
   font-size: 5rem;
   font-weight: 500;
   line-height: 1;
@@ -76,7 +76,7 @@ a,
 p {
   text-decoration: none;
   text-transform: uppercase;
-  color: #fff;
+  color: #000;
   font-size: 12px;
   font-weight: 500;
   line-height: 1;
@@ -123,6 +123,11 @@ nav > div {
   font-size: 1.2rem;
   font-weight: 500;
   z-index: 100;
+  color: #000000; /* Default black color */
+  transition: color 2s ease;
+}
+.logo-white a {
+  color: #ffffff; /* White color when menu is open */
 }
 
 .nav-link {
@@ -155,9 +160,9 @@ nav > div {
   position: absolute;
   width: 35px;
   height: 2px;
-  background-color: #ffffff;
+  background-color: #000000;;
   /* left: 0; */
-  transition: all 0.3s ease;
+  transition: all 0.3s ease, background-color 2s ease;
 }
 .burger::before {
   top: 3px;
@@ -172,6 +177,11 @@ nav > div {
 }
 .burger.active::after {
   transform: translateY(-8px) rotate(-45deg);
+}
+
+.burger.active::before,
+.burger.active::after {
+  background-color: #ffffff; /* White color when active */
 }
 
 .overlay-2 {
@@ -546,7 +556,7 @@ nav > div {
 
 .titleh1 {
   color: black;
-  text-align: left;
+  text-align: center;
   letter-spacing: -1px;
   font-family: evange;
   font-weight: 900;

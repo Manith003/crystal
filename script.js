@@ -179,6 +179,8 @@ function nav() {
       toggleButton.classList.toggle("active");
       overlay2.classList.toggle("open");
 
+       document.querySelector(".logo").classList.toggle("logo-white");
+
       if (isOpen) {
         tl.reverse(); // Animate overlay and menu items out (bottom to top)
       } else {
@@ -192,6 +194,9 @@ function nav() {
       link.addEventListener("click", function () {
         toggleButton.classList.remove("active");
         overlay2.classList.remove("open");
+
+        document.querySelector(".logo").classList.remove("logo-white");
+
         tl.reverse();
         isOpen = false;
       });
