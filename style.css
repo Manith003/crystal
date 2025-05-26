@@ -581,19 +581,22 @@ nav > div {
 
 .card-list .card-link .badge {
   color: black;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   padding: 8px 0px;
   margin: 16px 0 18px;
   text-align: left;
   font-weight: 600;
+  /* background-color: red; */
+  text-align: center;
 
 }
 
 .card-list .card-link .card-title {
-  font-size: 1.5rem;
+  font-size: 1rem;
   text-transform: lowercase;
   font-weight: 300;
   margin-bottom: 3rem;
+  text-align: center;
 }
 
 button {
@@ -605,7 +608,7 @@ button {
   color: white;
   font-size: 1rem;
   cursor: pointer;
-  font-weight: 100;
+  font-weight: 300;
 }
 
 .card-wrapper .swiper-pagination{
