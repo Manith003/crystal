@@ -28,7 +28,7 @@
 @font-face {
   font-family: "evange";
   src: url("./evange-danve-font-1747893656-0/EvangeDanveDemoRegular-BF682e8ce70f298.ttf")
-      format("truetype");
+    format("truetype");
 }
 
 * {
@@ -36,7 +36,8 @@
   padding: 0;
   box-sizing: border-box;
 }
-body,html {
+body,
+html {
   height: 100%;
   width: 100%;
   font-family: "PP Neue Montreal";
@@ -102,12 +103,13 @@ p {
   position: absolute;
   top: 0;
   width: 100vw;
-  padding: 1.75em 4em 0 2em;
+  padding: 1.75em 4em 0em 2em;
   display: flex;
   align-items: center;
   justify-content: space-between;
   will-change: transform;
   z-index: 98;
+  /* background-color: red; */
   /* background-color: rgba(20, 20, 18, 0.8);  */
   /* backdrop-filter: blur(5px);  */
   /* background-color: #141412; */
@@ -143,11 +145,11 @@ nav > div {
 }
 
 .burger {
-  position: absolute;
+  position: relative;
   top: 50%;
-  left: 90%;
-  right: 3%;
+  left: 50%;
   height: 20px;
+  width: 40px;
   border: none;
   background: none;
   cursor: pointer;
@@ -160,23 +162,23 @@ nav > div {
   position: absolute;
   width: 35px;
   height: 2px;
-  background-color: #000000;;
-  /* left: 0; */
+  background-color: #000000;
+  left: 5%;
   transition: all 0.3s ease, background-color 2s ease;
 }
 .burger::before {
-  top: 3px;
-  right: 15%;
+  top: 10px;
+  /* right: 15%; */
 }
 .burger::after {
-  bottom: 3px;
-  right: 15%;
+  bottom: 10px;
+  /* right: 15%; */
 }
 .burger.active::before {
-  transform: translateY(4px) rotate(45deg);
+  transform: translateY(3px) rotate(45deg);
 }
 .burger.active::after {
-  transform: translateY(-8px) rotate(-45deg);
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 .burger.active::before,
@@ -327,6 +329,10 @@ nav > div {
   padding-right: 0.25rem;
 }
 
+#word-1 h1 {
+  color: white;
+}
+
 #word-2 h1 {
   color: #ea611b;
 }
@@ -431,8 +437,8 @@ nav > div {
     padding: 0 0.3rem 0 0;
   }
   .burger {
-    left: 80%;
-    right: 3%;
+    left: 94%;
+    /* right: 3%; */
   }
   .nav-link {
     display: none;
@@ -455,6 +461,12 @@ nav > div {
     width: 350px;
     /* rotate: 3deg; */
     left: 51%;
+  }
+}
+
+@media (max-width: 900px) {
+  .burger{
+    left: 85%;
   }
 }
 
@@ -541,166 +553,99 @@ nav > div {
   }
 }
 /*--------------------------adding product-------------------------*/
-.product {
-  min-height: 50%;
-  width: 100vw;
-  padding: 1rem 0rem;
-  margin-top: 1rem;
+
+.card-wrapper {
+  /* max-width: 1100px; */
+  margin: 0 60px 35px;
+  /* padding: 20px 10px; */
   overflow: hidden;
-  /* background-color: red; */
 }
 
-.product-title {
+.card-list .card-item {
+  list-style: none;
+}
+
+.card-list .card-item .card-link {
+  user-select: none;
+  display: block;
+  background-color: #fff;
   padding: 1rem;
+  text-decoration: none;
 }
 
-.titleh1 {
-  color: black;
-  text-align: center;
-  letter-spacing: -1px;
-  font-family: evange;
-  font-weight: 900;
-  padding: 0.5rem;
-}
-
-.product-container {
-  margin: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 3rem;
-  flex-shrink: 0;
-  padding: 1rem;
-  overflow-x: auto;
-}
-
-.product-items {
-  width: 400px;
-  height: 650px;
-  position: relative;
-  overflow: hidden;
-  flex: 0 0 auto;
-}
-
-.productImg {
-  width: 99%;
-  height: 60%;
+.card-list .card-link .card-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
 }
 
-.desc {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.card-list .card-link .badge {
+  color: black;
+  font-size: 1.2rem;
+  padding: 8px 0px;
+  margin: 16px 0 18px;
+  text-align: left;
+  font-weight: 600;
+
 }
 
-.item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem 0;
-}
-
-.itemh1 {
-  font-size: 1.3rem;
-  font-weight: 500;
-  color: #000;
-  padding: 0.5rem;
-}
-
-.itemp {
-  font-size: 1rem;
-  font-weight: 500;
-  color: #000;
-  padding: 0.5rem;
-}
-
-.descriptionp {
-  font-size: 1rem;
-  color: #000;
-  padding: 0.5rem;
-  line-height: 1.2;
+.card-list .card-link .card-title {
+  font-size: 1.5rem;
   text-transform: lowercase;
+  font-weight: 300;
+  margin-bottom: 3rem;
 }
 
-.prod-btn{
-  margin-top: 1rem;
-  width: 99%;
+button {
   padding: 1rem;
-  background-color: #141412;
-  color: #fff;
-  border: none;
-  border-radius: 4rem;
-  cursor: pointer;
-}
-
-@media (max-width:1900px) {
-  .product-container{
-    justify-content: flex-start;
-  }
-}
-
-@media (max-width: 900px) {
-  .product{
-    padding: 0.5rem 0rem;
-    margin-top: 0;
-  }
-  .titleh1 {
-    font-size: 2.6rem;
-    letter-spacing: 0;
-  }
-  .product-items {
-    width: 300px;
-    height: 550px;
-  }
-
-  .productImg{
-    width: 100%;
-    height: 60%;
-  }
-
-  .product-container {
-    justify-content: flex-start;
-    padding: 0.1rem;
-    gap: 2rem;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
-    scrollbar-color: #141412 #fff;
-  }
-}
-
-@media (max-width: 600px) {
-  .product-container {
-    gap: 1rem;
-  }
-  
-}
-
-@media (min-width:1000px) {
-  .product-container {
-    gap: 5rem;
-  }
-}
-
-.product2{
-  height: 10vh;
-  width: 100vw;
-  /* background-color: red; */
-  padding: 3rem;
-}
-
-iframe{
   width: 100%;
-  height: 50%;
+  border-radius: 50px;
   border: none;
+  background-color: black;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 100;
 }
 
-@media (max-width: 900px) {
-  .product2{
-    padding: 1rem;
+.card-wrapper .swiper-pagination{
+  color: #000;
+}
+
+.card-wrapper .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: #000; /* Black color */
+  opacity: 0.5; /* Semi-transparent when inactive */
+  margin: 0 5px;
+  border-radius: 50%;
+}
+
+.card-wrapper .swiper-pagination-bullet-active {
+  background-color: #000;
+  opacity: 1;
+}
+
+.card-wrapper .swiper-slide-button {
+  color: #000;
+  transform: scale(0.7);
+}
+
+@media (max-width: 768px) {
+  .card-wrapper{
+    margin: 0 10px 25px;
   }
-  
+
+  .card-wrapper .swiper-slide-button{
+    display: none;
+  }
+}
+
+
+.page4{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f1f1f1;
 }

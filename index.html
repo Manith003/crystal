@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crystal Packaging</title>
     <link rel="shortcut icon" href="./loadingimagemain.avif" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
     <link rel="preload" as="image" href="./heroimagemain.avif" />
     <link rel="preload" as="image" href="./loadingimagemain.avif" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <title>Crystal Packaging</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -30,14 +31,13 @@
         </div>
 
         <div class="loading">
-            <img loading="lazy" decoding="async" src="./loadingimagemain.avif" class="loading-image"
-                alt="Loading">
+            <img loading="lazy" decoding="async" src="./loadingimagemain.avif" class="loading-image" alt="Loading">
         </div>
     </div>
     <main>
         <div class="container">
             <div class="hero-img">
-                <img src="./mainherowhite4.svg" alt="" srcset="">
+                <img src="./mainherowhite5.svg" alt="" srcset="">
             </div>
             <div class="nav">
                 <div class="logo">
@@ -243,7 +243,7 @@
 
         </section>
 
-        <section class="product">
+        <!-- <section class="product">
             <div class="product-title">
                 <h1 class="titleh1">OUR COLLECTIONS</h1>
             </div>
@@ -272,7 +272,8 @@
                             <p class="itemp">&#8377 2/pices</p>
                         </div>
                         <div class="description">
-                            <p class="descriptionp">Sturdy and secure — shipping boxes are perfect for protecting products in transit, ideal for retail, e-commerce, and bulk packaging.</p>
+                            <p class="descriptionp">Sturdy and secure — shipping boxes are perfect for protecting
+                                products in transit, ideal for retail, e-commerce, and bulk packaging.</p>
                         </div>
                     </div>
                     <div class="product-btn">
@@ -287,7 +288,8 @@
                             <p class="itemp">&#8377 2/pices</p>
                         </div>
                         <div class="description">
-                            <p class="descriptionp">Elegant and versatile — gift boxes are perfect for special occasions, offering a premium unboxing experience with customizable designs.</p>
+                            <p class="descriptionp">Elegant and versatile — gift boxes are perfect for special
+                                occasions, offering a premium unboxing experience with customizable designs.</p>
                         </div>
                     </div>
                     <div class="product-btn">
@@ -302,25 +304,77 @@
                             <p class="itemp">&#8377 2/pices</p>
                         </div>
                         <div class="description">
-                            <p class="descriptionp">Sleek and professional — business cards that leave a lasting impression, with custom designs to reflect your brand identity.</p>
+                            <p class="descriptionp">Sleek and professional — business cards that leave a lasting
+                                impression, with custom designs to reflect your brand identity.</p>
                         </div>
                     </div>
                     <div class="product-btn">
                         <button class="prod-btn">VIEW PRODUCT ON STORE</button>
                     </div>
-                </div>    
+                </div>
 
+            </div>
+        </section> -->
+
+        <section class="product-container swiper">
+            <div class="card-wrapper">
+                <ul class="card-list swiper-wrapper">
+                    <li class="card-item swiper-slide">
+                        <a href="#" class="card-link">
+                            <img src="./productImg/Render_Mockup_4000_3000_2025-05-22.avif" alt="card image" class="card-img
+                            ">
+                            <p class="badge">Mailer box</p>
+                            <h2 class="card-title">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                Repudiandae, dolores?</h2>
+                            <button>View on store</button>
+                        </a>
+                    </li>
+                    <li class="card-item swiper-slide">
+                        <a href="#" class="card-link">
+                            <img src="./productImg/Render_Mockup_4000_3000_2025-05-22.avif" alt="card image" class="card-img
+                            ">
+                            <p class="badge">Mailer box</p>
+                            <h2 class="card-title">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                Repudiandae, dolores?</h2>
+                            <button>View on store</button>
+                        </a>
+                    </li>
+                    <li class="card-item swiper-slide">
+                        <a href="#" class="card-link">
+                            <img src="./productImg/Render_Mockup_4000_3000_2025-05-22.avif" alt="card image" class="card-img
+                            ">
+                            <p class="badge">Mailer box</p>
+                            <h2 class="card-title">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                Repudiandae, dolores?</h2>
+                            <button>View on store</button>
+                        </a>
+                    </li>
+                    <li class="card-item swiper-slide">
+                        <a href="#" class="card-link">
+                            <img src="./productImg/Render_Mockup_4000_3000_2025-05-22.avif" alt="card image" class="card-img
+                            ">
+                            <p class="badge">Mailer box</p>
+                            <h2 class="card-title">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                Repudiandae, dolores?</h2>
+                            <button>View on store</button>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="swiper-pagination"></div>
+                <div class="swiper-slide-button swiper-button-prev"></div>
+                <div class="swiper-slide-button swiper-button-next"></div>
             </div>
         </section>
 
-        <section class="product2">
-        </section>
+        <section class="page4"></section>
     </main>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/CSSRulePlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script type="module" src="script.js"></script>
 </body>
 
