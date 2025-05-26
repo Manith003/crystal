@@ -476,7 +476,7 @@ nav > div {
   display: flex;
   gap: 6rem;
   flex-shrink: 0;
-  animation: marquee 15s linear infinite;
+  animation: marquee 25s linear infinite;
   padding: 0 3rem;
 }
 
