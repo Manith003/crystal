@@ -101,7 +101,7 @@ p {
 
 .nav {
   position: absolute;
-  top: 0;
+  top: -1%;
   width: 100vw;
   padding: 1.75em 4em 0em 2em;
   display: flex;
