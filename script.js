@@ -13,7 +13,7 @@ function loading() {
       },
       onComplete: () => {
         document.querySelector(".loading-image").style.display = "none";
-      }
+      },
     });
 
     gsap.set(".loading-image", { opacity: 0 });
@@ -28,15 +28,23 @@ function loading() {
       yoyo: true,
       ease: "power1.inOut",
     });
-    tl.to(".loading-image", {
-      opacity: 0,
-      duration: 0.5,
-    },'anim');
+    tl.to(
+      ".loading-image",
+      {
+        opacity: 0,
+        duration: 0.5,
+      },
+      "anim"
+    );
 
-    tl.to(".spinner", {
-      opacity: 0,
-      duration: 0.5,
-    },'anim');
+    tl.to(
+      ".spinner",
+      {
+        opacity: 0,
+        duration: 0.5,
+      },
+      "anim"
+    );
     tl.to(
       ".word h1",
       {
@@ -111,7 +119,7 @@ if (!sessionStorage.getItem("hasVisited")) {
     if (document.querySelector(".loading-image")) {
       document.querySelector(".loading-image").style.display = "none";
     }
-    gsap.set(".spinner",{ opacity: 0 });
+    gsap.set(".spinner", { opacity: 0 });
     gsap.set(".word h1", { y: "120%" });
     gsap.set("#word-1 h1", { y: "120%" });
     gsap.set("#word-2 h1", { y: "-120%" });
@@ -179,7 +187,7 @@ function nav() {
       toggleButton.classList.toggle("active");
       overlay2.classList.toggle("open");
 
-       document.querySelector(".logo").classList.toggle("logo-white");
+      document.querySelector(".logo").classList.toggle("logo-white");
 
       if (isOpen) {
         tl.reverse(); // Animate overlay and menu items out (bottom to top)
@@ -206,31 +214,35 @@ function nav() {
 
 nav();
 
+function swiperAdded() {
+  new Swiper(".card-wrapper", {
+    loop: true,
+    spaceBetween: 10,
 
-new Swiper('.card-wrapper', {
-  loop: true,
-
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-    dynamicBullets: true,
-  },
-
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-
-  breakpoints: {
-    0:{
-      slidesPerView: 1,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      dynamicBullets: true,
     },
-    768:{
-      slidesPerView: 2,
+
+    // Navigation arrows
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
     },
-    1024:{
-      slidesPerView: 3,
+
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
     },
-  }
-});
+  });
+}
+
+swiperAdded();
