@@ -591,7 +591,6 @@ nav > div {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
 }
 
 .titleh1 {
@@ -608,7 +607,8 @@ nav > div {
 
 .card-wrapper {
   margin: 0 60px 35px;
-  padding: 10px 20px;
+  padding: 0px 15px 10px;
+  /* background-color: brown; */
   overflow: hidden;
 }
 
@@ -664,6 +664,7 @@ button {
 
 .card-wrapper .swiper-pagination {
   color: #000;
+  display: none;
 }
 
 .card-wrapper .swiper-pagination-bullet {
@@ -692,6 +693,12 @@ button {
   margin-bottom: 15px;
   font-family: "Gilroy", sans-serif;
   display: none;
+}
+
+@media (min-width: 769px) {
+  .card-wrapper .swiper-pagination{
+    display: block;
+  }
 }
 
 @media (max-width: 768px) {
