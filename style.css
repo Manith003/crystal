@@ -589,6 +589,9 @@ nav > div {
 
 .product-title {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .titleh1 {
@@ -605,7 +608,7 @@ nav > div {
 
 .card-wrapper {
   margin: 0 60px 35px;
-  padding: 20px 10px;
+  padding: 10px 20px;
   overflow: hidden;
 }
 
@@ -616,18 +619,15 @@ nav > div {
 .card-list .card-item .card-link {
   user-select: none;
   display: block;
-  /* background: #131212; */
-  background-color: #fff;
+  background-color: #ffffff;
   padding: 1rem;
   text-decoration: none;
-  border-radius: 15px;  
 }
 
 .card-list .card-link .card-img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 4 / 4;
   object-fit: cover;
-  /* border-radius: 15px; */
 }
 
 .card-list .card-link .badge {
@@ -685,6 +685,31 @@ button {
   transform: scale(0.7);
 }
 
+.title-fraction-mobile {
+  text-align: center;
+  font-size: 16px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  font-family: "Gilroy", sans-serif;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .title-fraction-mobile {
+    display: block;
+  }
+  
+  .title-fraction-mobile .current {
+    font-weight: 600;
+    font-size: 17px;
+    color: #000;
+  }
+  
+  .title-fraction-mobile .total {
+    color: #777;
+  }
+}
+
 @media (max-width: 768px) {
   .titleh1 {
     font-size: 4rem;
@@ -696,21 +721,10 @@ button {
   .card-wrapper .swiper-slide-button {
     display: none;
   }
-  .card-list .card-item .card-link{
-    background-color: #161612;
-  }
-  .card-list .card-link .card-img {
-    border-radius: 15px;
-  }
-  .card-list .card-link .badge{
-    color: #fff;
-  }
-  .card-list .card-link .card-title {
-    color: #fff;
-  }
-  button{
-    background-color: #ffffff;
-    color: #000000;
+
+  .card-list .card-item .card-link {
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(5px);
   }
 }
 

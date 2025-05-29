@@ -215,7 +215,7 @@ function nav() {
 nav();
 
 function swiperAdded() {
-  new Swiper(".card-wrapper", {
+  const swiper = new Swiper(".card-wrapper", {
     loop: true,
     spaceBetween: 10,
 
@@ -223,6 +223,46 @@ function swiperAdded() {
       el: ".swiper-pagination",
       clickable: true,
       dynamicBullets: true,
+    },
+
+    on: {
+      init: function () {
+        if (window.innerWidth <= 768) {
+          const titleFractionEl = document.querySelector(".title-fraction-mobile");
+          const total = this.slides.length - this.loopedSlides * 0;
+
+          // Update the title fraction on slide change
+          this.on("slideChange", function () {
+            let realIndex = this.realIndex + 1;
+            titleFractionEl.innerHTML =
+              '<span class="current">' +
+              realIndex +
+              '</span> / <span class="total">' +
+              total +
+              "</span>";
+          });
+
+          // Initialize with the first slide
+          titleFractionEl.innerHTML = '<span class="current">1</span> / <span class="total">' + total + '</span>';
+        }
+      },
+      resize: function () {
+        // Update when screen size changes
+        const titleFractionEl = document.querySelector(".title-fraction-mobile");
+        if (window.innerWidth <= 768) {
+          titleFractionEl.style.display = "block";
+          const total = this.slides.length - this.loopedSlides * 2;
+          let realIndex = this.realIndex + 1;
+          titleFractionEl.innerHTML =
+            '<span class="current">' +
+            realIndex +
+            '</span> / <span class="total">' +
+            total +
+            "</span>";
+        } else {
+          titleFractionEl.style.display = "none";
+        }
+      },
     },
 
     // Navigation arrows
