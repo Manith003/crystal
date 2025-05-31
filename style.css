@@ -45,9 +45,10 @@ html {
 }
 
 main {
-  width: 100vw;
-  height: 100svh;
-  overflow-x: hidden;
+   width: 100vw;
+   height: auto; 
+   min-height: 100vh;
+   overflow-x: hidden;
 }
 
 img {
@@ -734,10 +735,71 @@ button {
   }
 }
 
-.page4 {
+/* adding scrolling animation in website..................................................................... */
+
+.frames-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.frame-image {
+  height: 100%;
+  width: 0%;
+  object-fit: cover;
+  object-position: top center;
+
+}
+
+.page4 {
   height: 100vh;
-  background-color: #f1f1f1;
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+
+.frame-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.frame-text p {
+  font-size: 1.2rem;
+  text-transform: none;
+  font-weight: 300;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .frame-image{
+    height:80%;
+  }
+  .frame-text h2 {
+    font-size: 1.8rem;
+  }
+  
+  .frame-text p {
+    font-size: 1rem;
+  }
+}
+
+
+
+
+.page5{
+  height: 100vh;
+  width: 100%;
+  background-color: #141412;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

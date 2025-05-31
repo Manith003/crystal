@@ -1,7 +1,8 @@
 import { gsap } from "https://cdn.skypack.dev/gsap";
+import { ScrollTrigger } from "https://cdn.skypack.dev/gsap/ScrollTrigger";
 import { CustomEase } from "https://cdn.skypack.dev/gsap/CustomEase";
 
-gsap.registerPlugin(CustomEase);
+gsap.registerPlugin(CustomEase, ScrollTrigger);
 CustomEase.create("hop", "0.9, 0,0.1,1");
 
 function loading() {
@@ -228,7 +229,9 @@ function swiperAdded() {
     on: {
       init: function () {
         if (window.innerWidth <= 768) {
-          const titleFractionEl = document.querySelector(".title-fraction-mobile");
+          const titleFractionEl = document.querySelector(
+            ".title-fraction-mobile"
+          );
           const total = this.slides.length - this.loopedSlides * 0;
 
           // Update the title fraction on slide change
@@ -243,12 +246,17 @@ function swiperAdded() {
           });
 
           // Initialize with the first slide
-          titleFractionEl.innerHTML = '<span class="current">1</span> / <span class="total">' + total + '</span>';
+          titleFractionEl.innerHTML =
+            '<span class="current">1</span> / <span class="total">' +
+            total +
+            "</span>";
         }
       },
       resize: function () {
         // Update when screen size changes
-        const titleFractionEl = document.querySelector(".title-fraction-mobile");
+        const titleFractionEl = document.querySelector(
+          ".title-fraction-mobile"
+        );
         if (window.innerWidth <= 768) {
           titleFractionEl.style.display = "block";
           const total = this.slides.length - this.loopedSlides * 2;
@@ -286,3 +294,109 @@ function swiperAdded() {
 }
 
 swiperAdded();
+
+function frameAnimation() {
+  // Configuration for the video frames
+  const totalFrames = 152;
+  const framePrefix = "./frames/output_";
+  const frameSuffix = ".png";
+  const frameContainer = document.querySelector(".page4");
+
+  // Create a container for all frames
+  const framesContainer = document.createElement("div");
+  framesContainer.classList.add("frames-container");
+
+  // Remove existing img if present
+  const existingImg = frameContainer.querySelector("img");
+  if (existingImg) {
+    frameContainer.removeChild(existingImg);
+  }
+
+  frameContainer.appendChild(framesContainer);
+
+  // Add a text element that will fade out during scroll
+  const textElement = document.createElement("div");
+  textElement.classList.add("frame-text");
+  textElement.innerHTML =
+    "<h2>Scroll down to Reveal</h2><p>Our packaging process in action</p>";
+  textElement.style.position = "absolute";
+  textElement.style.top = "50%";
+  textElement.style.left = "50%";
+  textElement.style.transform = "translate(-50%, -50%)";
+  textElement.style.textAlign = "center";
+  textElement.style.color = "#000";
+  textElement.style.zIndex = "2";
+  textElement.style.transition = "opacity 0.3s ease";
+  textElement.style.fontSize = "2rem";
+  textElement.style.width = "80%";
+  frameContainer.appendChild(textElement);
+
+  // Create a placeholder for the current frame
+  const currentFrameImg = document.createElement("img");
+  currentFrameImg.classList.add("frame-image");
+  // Start with zero width
+  currentFrameImg.style.width = "0%"; 
+  framesContainer.appendChild(currentFrameImg);
+
+  // Preload all frames
+  const frameImages = [];
+  for (let i = 1; i <= totalFrames; i++) {
+    const frameNumber = i.toString().padStart(4, "0");
+    const frameSrc = `${framePrefix}${frameNumber}${frameSuffix}`;
+
+    const img = new Image();
+    img.src = frameSrc;
+    frameImages.push(img);
+
+    // Set the first frame as the initial image
+    if (i === 1) {
+      currentFrameImg.src = frameSrc;
+    }
+  }
+
+  // Setup ScrollTrigger for frame animation
+  ScrollTrigger.create({
+    trigger: frameContainer,
+    start: "top top",
+    end: "bottom top",
+    scrub: true,
+    markers: false, // Set to false for production
+    onUpdate: (self) => {
+      // Calculate which frame to show based on scroll progress
+      const frameIndex = Math.min(
+        Math.floor(self.progress * totalFrames),
+        totalFrames - 1
+      );
+
+      // First 25% of scroll: Animate width from 0 to 100% and fade out text
+      if (self.progress <= 0.25) {
+        const widthProgress = self.progress * 2; // Convert to 0-1 range for first 25%
+        gsap.to(currentFrameImg, {
+          width: `${widthProgress * 100}%`,
+          duration: 0.1,
+          ease: "none",
+          overwrite: "auto"
+        });
+        textElement.style.opacity = 1 - widthProgress * 2; // Fade out text faster
+      } else {
+        // After 25%, keep width at 100% and text hidden
+        gsap.to(currentFrameImg, {
+          width: "100%",
+          duration: 0.1,
+          ease: "none",
+          overwrite: "auto"
+        });
+        textElement.style.opacity = "0";
+      }
+
+      // Update the image source to show the current frame
+      if (frameImages[frameIndex] && frameImages[frameIndex].complete) {
+        currentFrameImg.src = frameImages[frameIndex].src;
+      }
+    },
+    pin: true,
+    anticipatePin: 1,
+  });
+}
+
+frameAnimation();
