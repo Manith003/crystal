@@ -295,57 +295,56 @@ function swiperAdded() {
 
 swiperAdded();
 
-function textAnimation(){
-    let text = document.querySelector(".titleh1");
-    let textContent = text.textContent;
-    console.log(textContent);
-    let words = textContent.split("");
-    let halfValue = Math.floor(words.length / 2);
-    
-console.log(halfValue);
+function textAnimation() {
+  let text = document.querySelector(".titleh1");
+  let textContent = text.textContent;
+  console.log(textContent);
+  let words = textContent.split("");
+  let halfValue = Math.floor(words.length / 2);
 
-    var clutter = "";
-    words.forEach(function(elem,idx){
-      if(idx < halfValue){
-        clutter += `<span class="first-half">${elem}</span>`;
-      }else{
-        clutter += `<span class="second-half">${elem}</span>`;
-      }
-    });
-    
-    text.innerHTML = clutter;
+  console.log(halfValue);
 
-    gsap.from(".titleh1 .first-half", {
-      y: 30,
-      opacity: 0,
-      duration: 0.7,
-      delay: 0.3,
-      stagger: 0.15,
-      scrollTrigger: {
-        trigger: ".titleh1",
-        scroller: 'body',
-        scrub: true,
-        markers: false, // Set to false for production
-        start: "top 80%",
-        end: "bottom 50%",
-      }
-    });
-    gsap.from(".titleh1 .second-half", {
-      y: 30,
-      opacity: 0,
-      duration: 0.7,
-      delay: 0.3,
-      stagger: -0.15,
-      scrollTrigger: {
-        trigger: ".titleh1",
-        scroller: 'body',
-        scrub: true,
-        markers: false, // Set to false for production
-        start: "top 80%",
-        end: "bottom 50%",
-      }
-    });
+  var clutter = "";
+  words.forEach(function (elem, idx) {
+    if (idx < halfValue) {
+      clutter += `<span class="first-half">${elem}</span>`;
+    } else {
+      clutter += `<span class="second-half">${elem}</span>`;
+    }
+  });
 
+  text.innerHTML = clutter;
+
+  gsap.from(".titleh1 .first-half", {
+    y: 30,
+    opacity: 0,
+    duration: 0.7,
+    delay: 0.3,
+    stagger: 0.15,
+    scrollTrigger: {
+      trigger: ".titleh1",
+      scroller: "body",
+      scrub: true,
+      markers: false, // Set to false for production
+      start: "top 80%",
+      end: "bottom 50%",
+    },
+  });
+  gsap.from(".titleh1 .second-half", {
+    y: 30,
+    opacity: 0,
+    duration: 0.7,
+    delay: 0.3,
+    stagger: -0.15,
+    scrollTrigger: {
+      trigger: ".titleh1",
+      scroller: "body",
+      scrub: true,
+      markers: false, // Set to false for production
+      start: "top 80%",
+      end: "bottom 50%",
+    },
+  });
 }
 textAnimation();
 
@@ -374,9 +373,9 @@ function frameAnimation() {
   textElement.innerHTML =
     "<h2>Scroll down to Reveal</h2><p>Our packaging process in action</p>";
   textElement.style.position = "absolute";
-  textElement.style.top = "50%";
+  textElement.style.top = "30%";
   textElement.style.left = "50%";
-  textElement.style.transform = "translate(-50%, -50%)";
+  textElement.style.transform = "translate(-50%, -10%)";
   textElement.style.textAlign = "center";
   textElement.style.color = "#000";
   textElement.style.zIndex = "2";
@@ -389,7 +388,7 @@ function frameAnimation() {
   const currentFrameImg = document.createElement("img");
   currentFrameImg.classList.add("frame-image");
   // Start with zero width
-  currentFrameImg.style.width = "0%"; 
+  currentFrameImg.style.width = "0%";
   framesContainer.appendChild(currentFrameImg);
 
   // Preload all frames
@@ -413,7 +412,7 @@ function frameAnimation() {
     trigger: frameContainer,
     start: "top top",
     end: "bottom top",
-    scrub: true,
+    scrub: 5,
     markers: false, // Set to false for production
     onUpdate: (self) => {
       // Calculate which frame to show based on scroll progress
@@ -427,20 +426,52 @@ function frameAnimation() {
         const widthProgress = self.progress * 2; // Convert to 0-1 range for first 25%
         gsap.to(currentFrameImg, {
           width: `${widthProgress * 100}%`,
-          duration: 0.1,
+          duration: 0.3,
           ease: "none",
-          overwrite: "auto"
+          overwrite: "auto",
         });
-        textElement.style.opacity = 1 - widthProgress * 2; // Fade out text faster
+
+        const isMobile = window.innerWidth <= 900;
+        if (isMobile) {
+          // On mobile: animate from 30% to 70%
+          const newTopPosition = 30 + widthProgress * 40; // Move from 30% to 70%
+
+          gsap.to(textElement, {
+            top: `${newTopPosition}%`,
+            opacity: 1 - widthProgress,
+            duration: 0.3,
+            ease: "power2.out",
+            overwrite: "auto",
+          });
+        } else {
+          // On desktop: keep at 30% and just fade out
+          gsap.to(textElement, {
+            top: "30%", // Stay fixed at 30%
+            opacity: 1 - widthProgress,
+            duration: 0.3,
+            ease: "power2.out",
+            overwrite: "auto",
+          });
+        }
       } else {
         // After 25%, keep width at 100% and text hidden
         gsap.to(currentFrameImg, {
           width: "100%",
-          duration: 0.1,
-          ease: "none",
-          overwrite: "auto"
+          duration: 0.5,
+          ease: "power2.out",
+          overwrite: "auto",
         });
-        textElement.style.opacity = "0";
+
+        // Use different positions based on screen width for final state
+        const finalPosition = window.innerWidth <= 900 ? 70 : 30;
+
+        gsap.to(textElement, {
+          top: `${finalPosition}%`, // 70% on mobile, 50% on desktop
+          opacity: "1", // Changed from "1" to "0" to hide text
+          duration: 0.3,
+          ease: "power2.out",
+          overwrite: "auto",
+        });
       }
 
       // Update the image source to show the current frame
@@ -455,28 +486,27 @@ function frameAnimation() {
 
 frameAnimation();
 
-
-function smoothScrollLenis(){
+function smoothScrollLenis() {
   // Initialize Lenis
-const lenis = new Lenis({
-  // autoRaf: true,
-  lerp: 0.1,
-  smoothWheel: true,  
-});
+  const lenis = new Lenis({
+    // autoRaf: true,
+    lerp: 0.1,
+    duration: 1.3,
+    smoothWheel: true,
+  });
 
-// Listen for the scroll event and log the event data
-lenis.on('scroll', (e) => {
-  console.log(e);
-});
+  // Listen for the scroll event and log the event data
+  lenis.on("scroll", (e) => {
+    console.log(e);
+  });
 
+  // Use requestAnimationFrame to continuously update the scroll
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
 
-// Use requestAnimationFrame to continuously update the scroll
-function raf(time) {
-  lenis.raf(time);
   requestAnimationFrame(raf);
-}
-
-requestAnimationFrame(raf);
 }
 
 smoothScrollLenis();
