@@ -295,6 +295,60 @@ function swiperAdded() {
 
 swiperAdded();
 
+function textAnimation(){
+    let text = document.querySelector(".titleh1");
+    let textContent = text.textContent;
+    console.log(textContent);
+    let words = textContent.split("");
+    let halfValue = Math.floor(words.length / 2);
+    
+console.log(halfValue);
+
+    var clutter = "";
+    words.forEach(function(elem,idx){
+      if(idx < halfValue){
+        clutter += `<span class="first-half">${elem}</span>`;
+      }else{
+        clutter += `<span class="second-half">${elem}</span>`;
+      }
+    });
+    
+    text.innerHTML = clutter;
+
+    gsap.from(".titleh1 .first-half", {
+      y: 30,
+      opacity: 0,
+      duration: 0.7,
+      delay: 0.3,
+      stagger: 0.15,
+      scrollTrigger: {
+        trigger: ".titleh1",
+        scroller: 'body',
+        scrub: true,
+        markers: false, // Set to false for production
+        start: "top 80%",
+        end: "bottom 50%",
+      }
+    });
+    gsap.from(".titleh1 .second-half", {
+      y: 30,
+      opacity: 0,
+      duration: 0.7,
+      delay: 0.3,
+      stagger: -0.15,
+      scrollTrigger: {
+        trigger: ".titleh1",
+        scroller: 'body',
+        scrub: true,
+        markers: false, // Set to false for production
+        start: "top 80%",
+        end: "bottom 50%",
+      }
+    });
+
+}
+textAnimation();
+
 function frameAnimation() {
   // Configuration for the video frames
   const totalFrames = 152;
@@ -400,3 +454,29 @@ function frameAnimation() {
 }
 
 frameAnimation();
+
+
+function smoothScrollLenis(){
+  // Initialize Lenis
+const lenis = new Lenis({
+  // autoRaf: true,
+  lerp: 0.1,
+  smoothWheel: true,  
+});
+
+// Listen for the scroll event and log the event data
+lenis.on('scroll', (e) => {
+  console.log(e);
+});
+
+
+// Use requestAnimationFrame to continuously update the scroll
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
+}
+
+smoothScrollLenis();
