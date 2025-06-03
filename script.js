@@ -512,17 +512,67 @@ function smoothScrollLenis() {
 smoothScrollLenis();
 
 
-function sheryAnimation() {
-  Shery.mouseFollower({
-  skew: true,
-  ease: "cubic-bezier(0.23, 1, 0.320, 1)",
-  duration: 0.1,
-});
+// function sheryAnimation() {
+//   Shery.mouseFollower({
+//   skew: true,
+//   ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+//   duration: 0.1,
+// });
 
-Shery.makeMagnet(".burger, .logo", {
-  ease: "cubic-bezier(0.23, 1, 0.320, 1)",
-  duration: 1,
-});
+// Shery.makeMagnet(".burger, .logo", {
+//   ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+//   duration: 1,
+// });
+// }
+
+// sheryAnimation();
+
+function sheryAnimation() {
+  // Only run on desktop (devices wider than 900px)
+  if (window.innerWidth > 900) {
+    console.log("Initializing SheryJS animations for desktop");
+    
+    // Mouse follower effect
+    Shery.mouseFollower({
+      skew: true,
+      ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+      duration: 0.1,
+    });
+
+    // Magnetic effect on navigation elements
+    Shery.makeMagnet(".burger, .logo", {
+      ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+      duration: 1,
+    });
+  } else {
+    console.log("SheryJS animations disabled on mobile devices");
+  }
 }
 
-sheryAnimation();
+// Initialize and also add a resize listener to handle window resizing
+function initSheryResponsive() {
+  // Initial setup
+  sheryAnimation();
+  
+  // Handle window resize events with debounce
+  let resizeTimer;
+  window.addEventListener("resize", function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function() {
+      // Remove existing mouse follower if window is resized to mobile
+      if (window.innerWidth <= 900) {
+        // Try to remove existing mouse follower if it exists
+        const follower = document.querySelector(".mousefollower");
+        if (follower) {
+          follower.remove();
+        }
+      } else {
+        // Reinitialize for desktop if needed
+        sheryAnimation();
+      }
+    }, 250); // Wait 250ms after resize ends before checking
+  });
+}
+
+// Replace your sheryAnimation() call with this:
+initSheryResponsive();
