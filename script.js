@@ -1,5 +1,5 @@
-import { gsap } from "https://cdn.skypack.dev/gsap";
-import { ScrollTrigger } from "https://cdn.skypack.dev/gsap/ScrollTrigger";
+// import { gsap } from "https://cdn.skypack.dev/gsap";
+// import { ScrollTrigger } from "https://cdn.skypack.dev/gsap/ScrollTrigger";
 import { CustomEase } from "https://cdn.skypack.dev/gsap/CustomEase";
 
 gsap.registerPlugin(CustomEase, ScrollTrigger);
@@ -373,7 +373,7 @@ function frameAnimation() {
   textElement.innerHTML =
     "<h2>Scroll down to Reveal</h2><p>Our packaging process in action</p>";
   textElement.style.position = "absolute";
-  textElement.style.top = "30%";
+  textElement.style.top = "10%";
   textElement.style.left = "50%";
   textElement.style.transform = "translate(-50%, -10%)";
   textElement.style.textAlign = "center";
@@ -413,7 +413,7 @@ function frameAnimation() {
     start: "top top",
     end: "bottom top",
     scrub: 5,
-    markers: false, // Set to false for production
+    markers: false,
     onUpdate: (self) => {
       // Calculate which frame to show based on scroll progress
       const frameIndex = Math.min(
@@ -434,7 +434,7 @@ function frameAnimation() {
         const isMobile = window.innerWidth <= 900;
         if (isMobile) {
           // On mobile: animate from 30% to 70%
-          const newTopPosition = 30 + widthProgress * 40; // Move from 30% to 70%
+          const newTopPosition = 10 + widthProgress * 40; // Move from 30% to 70%
 
           gsap.to(textElement, {
             top: `${newTopPosition}%`,
@@ -444,9 +444,9 @@ function frameAnimation() {
             overwrite: "auto",
           });
         } else {
-          // On desktop: keep at 30% and just fade out
+          // On desktop: keep at 10% and just fade out
           gsap.to(textElement, {
-            top: "30%", // Stay fixed at 30%
+            top: "10%", // Stay fixed at 10%
             opacity: 1 - widthProgress,
             duration: 0.3,
             ease: "power2.out",
@@ -467,7 +467,7 @@ function frameAnimation() {
 
         gsap.to(textElement, {
           top: `${finalPosition}%`, // 70% on mobile, 50% on desktop
-          opacity: "1", // Changed from "1" to "0" to hide text
+          opacity: "1",
           duration: 0.3,
           ease: "power2.out",
           overwrite: "auto",
@@ -510,3 +510,19 @@ function smoothScrollLenis() {
 }
 
 smoothScrollLenis();
+
+
+function sheryAnimation() {
+  Shery.mouseFollower({
+  skew: true,
+  ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+  duration: 0.1,
+});
+
+Shery.makeMagnet(".burger, .logo", {
+  ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+  duration: 1,
+});
+}
+
+sheryAnimation();
