@@ -512,21 +512,6 @@ function smoothScrollLenis() {
 smoothScrollLenis();
 
 
-// function sheryAnimation() {
-//   Shery.mouseFollower({
-//   skew: true,
-//   ease: "cubic-bezier(0.23, 1, 0.320, 1)",
-//   duration: 0.1,
-// });
-
-// Shery.makeMagnet(".burger, .logo", {
-//   ease: "cubic-bezier(0.23, 1, 0.320, 1)",
-//   duration: 1,
-// });
-// }
-
-// sheryAnimation();
-
 function sheryAnimation() {
   // Only run on desktop (devices wider than 900px)
   if (window.innerWidth > 900) {
@@ -574,5 +559,4 @@ function initSheryResponsive() {
   });
 }
 
-// Replace your sheryAnimation() call with this:
 initSheryResponsive();
