@@ -12,129 +12,161 @@
 
 <body>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-background"></div>
-        <div class="hero-content">
-            <h1 class="hero-title">
-                CRYSTAL'S<br>
-                <span class="hero-subtitle">GALLERY</span>
-            </h1>
-            <p class="hero-description">
-                Discover our premium collection of industrial machinery designed for precision, innovation, and
-                reliability.
-            </p>
-            <button class="hero-button" data-hover>
-                Explore Machinery
-                <svg class="arrow-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="2">
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-            </button>
-        </div>
-    </section>
-
-    <!-- Filter Section -->
-    <section class="filter-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Our Machinery</h2>
-                <p class="section-description">
-                    Explore our comprehensive range of industrial machinery, each engineered for excellence and built to
-                    last.
-                </p>
+    <!-- <main> -->
+        <div class="nav">
+            <div class="logo">
+                <a href="./index.html">CrystalPackaging</a>
             </div>
-
-            <div class="filter-buttons">
-                <button class="filter-btn active" data-filter="all" data-hover>All</button>
-                <button class="filter-btn" data-filter="printing" data-hover>Printing</button>
-                <button class="filter-btn" data-filter="cutting" data-hover>Cutting</button>
-                <button class="filter-btn" data-filter="finishing" data-hover>Finishing</button>
-                <button class="filter-btn" data-filter="packaging" data-hover>Packaging</button>
+            <div class="menu-btn">
+                <button class="burger"></button>
             </div>
-
-            <!-- Gallery Grid -->
-            <div class="gallery-grid" id="gallery-grid">
-                <!-- Machine cards will be dynamically generated -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Showcase Section -->
-    <section class="showcase-section">
-        <div class="container">
-            <div class="showcase-grid">
-                <div class="showcase-item">
-                    <div class="showcase-icon">⚡</div>
-                    <h3 class="showcase-title">PRECISION</h3>
-                    <p class="showcase-description">
-                        Every machine is engineered with meticulous attention to detail, ensuring accuracy and
-                        consistency in every operation.
-                    </p>
-                </div>
-                <div class="showcase-item">
-                    <div class="showcase-icon">🔧</div>
-                    <h3 class="showcase-title">INNOVATION</h3>
-                    <p class="showcase-description">
-                        Cutting-edge technology and advanced features that push the boundaries of industrial
-                        manufacturing.
-                    </p>
-                </div>
-                <div class="showcase-item">
-                    <div class="showcase-icon">⚙️</div>
-                    <h3 class="showcase-title">RELIABILITY</h3>
-                    <p class="showcase-description">
-                        Built to withstand the demands of continuous operation with minimal maintenance requirements.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <h3 class="footer-title">Crystal Packaging</h3>
-            <p class="footer-description">Leading manufacturer of premium industrial machinery since 1985</p>
-            <div class="social-links">
-                <a href="#" data-hover>LinkedIn</a>
-                <a href="#" data-hover>Twitter</a>
-                <a href="#" data-hover>YouTube</a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Modal -->
-    <div class="modal-overlay" id="modal-overlay">
-        <div class="modal-content" id="modal-content">
-            <button class="modal-close" id="modal-close" data-hover>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M18 6L6 18M6 6l12 12" />
-                </svg>
-            </button>
-            <div class="modal-image">
-                <img id="modal-img" src="/placeholder.svg" alt="">
-            </div>
-            <div class="modal-body">
-                <div class="modal-header">
-                    <span class="modal-badge" id="modal-badge"></span>
-                    <h2 class="modal-title" id="modal-title"></h2>
-                </div>
-                <p class="modal-description" id="modal-description"></p>
-                <div class="modal-details">
-                    <!-- <div class="specifications">
-                        <h3>Specifications</h3>
-                        <div id="modal-specs"></div>
-                    </div> -->
-                    <div class="features">
-                        <h3>Key Features</h3>
-                        <ul id="modal-features"></ul>
+            <div class="overlay-2">
+                <div class="overlay-menu">
+                    <div class="menu-item">
+                        <p id="active"><a href="index.html">Home</a></p>
+                    </div>
+                    <div class="menu-item">
+                        <p><a href="./product.html">Account</a></p>
+                    </div>
+                    <div class="menu-item">
+                        <p><a href="gallery.html">Gallery</a></p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-background"></div>
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    CRYSTAL'S<br>
+                    <span class="hero-subtitle">GALLERY</span>
+                </h1>
+                <p class="hero-description">
+                    Discover our premium collection of industrial machinery designed for precision, innovation, and
+                    reliability.
+                </p>
+                <button class="hero-button" data-hover>
+                    Explore Machinery
+                    <svg class="arrow-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </button>
+                <button class="hero-button Home" data-hover>
+                    Back to Home
+                    <svg class="arrow-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <!-- Filter Section -->
+        <section class="filter-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Our Machinery</h2>
+                    <p class="section-description">
+                        Explore our comprehensive range of industrial machinery, each engineered for excellence and
+                        built to
+                        last.
+                    </p>
+                </div>
+
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all" data-hover>All</button>
+                    <button class="filter-btn" data-filter="printing" data-hover>Printing</button>
+                    <button class="filter-btn" data-filter="cutting" data-hover>Cutting</button>
+                    <button class="filter-btn" data-filter="finishing" data-hover>Finishing</button>
+                    <button class="filter-btn" data-filter="packaging" data-hover>Packaging</button>
+                </div>
+
+                <!-- Gallery Grid -->
+                <div class="gallery-grid" id="gallery-grid">
+                    <!-- Machine cards will be dynamically generated -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Showcase Section -->
+        <section class="showcase-section">
+            <div class="container">
+                <div class="showcase-grid">
+                    <div class="showcase-item">
+                        <div class="showcase-icon">⚡</div>
+                        <h3 class="showcase-title">PRECISION</h3>
+                        <p class="showcase-description">
+                            Every machine is engineered with meticulous attention to detail, ensuring accuracy and
+                            consistency in every operation.
+                        </p>
+                    </div>
+                    <div class="showcase-item">
+                        <div class="showcase-icon">🔧</div>
+                        <h3 class="showcase-title">INNOVATION</h3>
+                        <p class="showcase-description">
+                            Cutting-edge technology and advanced features that push the boundaries of industrial
+                            manufacturing.
+                        </p>
+                    </div>
+                    <div class="showcase-item">
+                        <div class="showcase-icon">⚙️</div>
+                        <h3 class="showcase-title">RELIABILITY</h3>
+                        <p class="showcase-description">
+                            Built to withstand the demands of continuous operation with minimal maintenance
+                            requirements.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <h3 class="footer-title">Crystal Packaging</h3>
+                <p class="footer-description">Leading manufacturer of premium industrial machinery since 1985</p>
+                <div class="social-links">
+                    <a href="#" data-hover>LinkedIn</a>
+                    <a href="#" data-hover>Twitter</a>
+                    <a href="#" data-hover>YouTube</a>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Modal -->
+        <div class="modal-overlay" id="modal-overlay">
+            <div class="modal-content" id="modal-content">
+                <button class="modal-close" id="modal-close" data-hover>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 6L6 18M6 6l12 12" />
+                    </svg>
+                </button>
+                <div class="modal-image">
+                    <img id="modal-img" src="/placeholder.svg" alt="">
+                </div>
+                <div class="modal-body">
+                    <div class="modal-header">
+                        <span class="modal-badge" id="modal-badge"></span>
+                        <h2 class="modal-title" id="modal-title"></h2>
+                    </div>
+                    <p class="modal-description" id="modal-description"></p>
+                    <div class="modal-details">
+                        <!-- <div class="specifications">
+                        <h3>Specifications</h3>
+                        <div id="modal-specs"></div>
+                    </div> -->
+                        <div class="features">
+                            <h3>Key Features</h3>
+                            <ul id="modal-features"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- </main> -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>

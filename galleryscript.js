@@ -947,6 +947,12 @@ function sheryAnimation() {
       ease: "cubic-bezier(0.23, 1, 0.320, 1)",
       duration: 0.1,
     });
+Shery.makeMagnet(".burger, .logo",{
+  //Parameters are optional.
+  ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+  duration: 1,
+});
+
   } else {
     console.log("SheryJS animations disabled on mobile devices");
   }
@@ -978,3 +984,93 @@ function initSheryResponsive() {
 }
 
 initSheryResponsive();
+
+
+function nav() {
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggleButton = document.querySelector(".burger");
+    const overlay2 = document.querySelector(".overlay-2");
+    const menuLinks = document.querySelectorAll(".menu-item a");
+    let isOpen = false;
+
+    const pageElements = [".cta", ".hero-copy"];
+
+    gsap.set(overlay2, {
+      top: "0%",
+      opacity: 1,
+      clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
+    });
+
+    let tl = gsap.timeline({ paused: true });
+
+    tl.to(overlay2, {
+      clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+      duration: 0.9,
+      ease: "power3.inOut",
+    });
+
+    tl.to(
+      pageElements,
+      {
+        opacity: 0,
+        duration: 0.1,
+        ease: "power2.inOut",
+      },
+      "-=0.6"
+    );
+
+    tl.fromTo(
+      ".menu-item a",
+      {
+        y: 60,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.7,
+        stagger: 0.12,
+        ease: "power3.out",
+      },
+      "-=0.5"
+    );
+
+    // Burger click
+    toggleButton.addEventListener("click", function () {
+      toggleButton.classList.toggle("active");
+      overlay2.classList.toggle("open");
+
+      document.querySelector(".logo").classList.toggle("logo-white");
+
+      if (isOpen) {
+        tl.reverse(); // Animate overlay and menu items out (bottom to top)
+      } else {
+        tl.play(); // Animate overlay and menu items in (top to bottom)
+      }
+      isOpen = !isOpen;
+    });
+
+    // Also close menu with animation when clicking a menu item
+    menuLinks.forEach((link) => {
+      link.addEventListener("click", function () {
+        toggleButton.classList.remove("active");
+        overlay2.classList.remove("open");
+
+        document.querySelector(".logo").classList.remove("logo-white");
+
+        tl.reverse();
+        isOpen = false;
+      });
+    });
+  });
+}
+
+nav();
+
+function backToHome(){
+    document.querySelector(".Home").addEventListener("click",function(){
+        window.location.href = "./index.html";
+    })
+}
+
+backToHome();

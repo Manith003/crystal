@@ -1,8 +1,7 @@
 @font-face {
-    font-family: "Gilroy";
-    src: url("./gilroy/Gilroy-Medium.ttf");
+  font-family: "Gilroy";
+  src: url("./gilroy/Gilroy-Medium.ttf");
 }
-
 
 * {
   margin: 0;
@@ -58,6 +57,11 @@ body {
   max-width: 800px;
   padding: 0 24px;
   animation: heroFadeIn 1s ease-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .hero-title {
@@ -92,11 +96,16 @@ body {
   padding: 16px 32px;
   font-size: 1.125rem;
   font-weight: 600;
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   transition: all 0.3s ease;
   animation: slideUp 0.8s ease-out 0.9s both;
+  cursor: pointer;
+  border-radius: 10px;
+  /* background-color: red; */
+  width: 50%;
 }
 
 .hero-button:hover {
@@ -546,9 +555,8 @@ body {
 
   .filter-section {
     padding: 60px 0;
-     border-top-left-radius:50px;
-  border-top-right-radius: 50px;
-
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
   }
 
   .gallery-grid {
@@ -622,4 +630,152 @@ body {
 .animate-on-scroll.animated {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* adding navigation styles */
+
+.nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 1em 3.5em 1em 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  will-change: transform;
+  z-index: 99;
+}
+
+nav > div {
+  flex: 1;
+}
+
+.logo a {
+  position: relative;
+  text-transform: capitalize;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  z-index: 100;
+  color: #000000; /* Default black color */
+  transition: color 2s ease;
+}
+.logo-white a {
+  color: #ffffff; /* White color when menu is open */
+}
+
+.menu-btn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.burger {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  height: 20px;
+  width: 40px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.burger::before,
+.burger::after {
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 2px;
+  background-color: #000000;
+  left: 5%;
+  transition: all 0.3s ease, background-color 2s ease;
+}
+.burger::before {
+  top: 15px;
+  /* right: 15%; */
+}
+.burger::after {
+  bottom: 15px;
+  /* right: 15%; */
+}
+.burger.active::before {
+  transform: translateY(0px) rotate(45deg);
+}
+.burger.active::after {
+  transform: translateY(11px) rotate(-45deg);
+}
+
+.burger.active::before,
+.burger.active::after {
+  background-color: #ffffff; /* White color when active */
+}
+
+.overlay-2 {
+  position: absolute;
+  top: -100svh;
+  left: 0;
+  width: 100%;
+  height: 100svh;
+  background-color: #141412;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  z-index: 99;
+}
+
+.overlay-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+
+.menu-item {
+  position: relative;
+  display: flex;
+  cursor: pointer;
+  background-color: #141412;
+  text-transform: uppercase;
+}
+
+.menu-item a {
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  transition: letter-spacing 0.3s;
+  z-index: 100;
+}
+.menu-item p:hover {
+  letter-spacing: 0.5em;
+}
+
+@media (max-width: 1100px) {
+  h1 {
+    font-size: 2.4rem;
+  }
+  h1 span {
+    font-size: 2.5rem;
+    padding: 0 0.3rem 0 0;
+  }
+  .burger {
+    left: 94%;
+    /* right: 3%; */
+  }
+  .nav-link {
+    display: none;
+  }
+
+  .menu-item a {
+    font-size: 3rem;
+    line-height: 0.8;
+  }
+  .overlay-menu {
+    gap: 1rem;
+  }
 }
