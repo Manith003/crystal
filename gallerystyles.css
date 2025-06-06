@@ -1,6 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
   margin: 0;
@@ -9,9 +7,9 @@
 }
 
 body {
- font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif;
   background-color: #ffffff;
-  color: #000000;
+  color: #251710f6;
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -39,16 +37,6 @@ body {
   /* background: #f7f7f7; */
 }
 
-.hero-background::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("/placeholder.svg?height=1080&width=1920");
-  background-size: cover;
-  background-position: center;
-  opacity: 0.1;
-}
-
 .hero-content {
   position: relative;
   z-index: 10;
@@ -74,7 +62,8 @@ body {
 }
 
 .hero-subtitle {
-  color: #555555;
+  /* color: #555555; */
+  color: #ea611b;
 }
 
 .hero-description {
@@ -89,7 +78,7 @@ body {
 }
 
 .hero-button {
-  background: #000000;
+  background: #251710f6;
   color: white;
   border: none;
   padding: 16px 32px;
@@ -137,7 +126,7 @@ body {
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 700;
   margin-bottom: 16px;
-  color: #000000;
+  /* color: #000000; */
 }
 
 .section-description {
@@ -552,7 +541,7 @@ body {
     padding: 0 16px;
   }
 
-   .hero-button {
+  .hero-button {
     padding: 14px 28px;
     font-size: 1rem;
     width: 70%;
