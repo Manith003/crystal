@@ -1,7 +1,6 @@
-@font-face {
-  font-family: "Gilroy";
-  src: url("./gilroy/Gilroy-Medium.ttf");
-}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 
 * {
   margin: 0;
@@ -10,7 +9,7 @@
 }
 
 body {
-  font-family: "Gilroy";
+ font-family: "Montserrat", sans-serif;
   background-color: #ffffff;
   color: #000000;
   overflow-x: hidden;
@@ -553,6 +552,12 @@ body {
     padding: 0 16px;
   }
 
+   .hero-button {
+    padding: 14px 28px;
+    font-size: 1rem;
+    width: 70%;
+  }
+
   .filter-section {
     padding: 60px 0;
     border-top-left-radius: 50px;
@@ -605,6 +610,7 @@ body {
   .hero-button {
     padding: 14px 28px;
     font-size: 1rem;
+    width: 70%;
   }
 
   .machine-content {
@@ -733,6 +739,7 @@ nav > div {
   justify-content: center;
   align-items: center;
   z-index: 99;
+  gap: 1.5rem;
 }
 
 .menu-item {
@@ -750,9 +757,11 @@ nav > div {
   color: #fff;
   transition: letter-spacing 0.3s;
   z-index: 100;
+  font-weight: 500;
+  font-size: 5rem;
 }
 .menu-item p:hover {
-  letter-spacing: 0.5em;
+  letter-spacing: 0.4em;
 }
 
 @media (max-width: 1100px) {
@@ -776,6 +785,6 @@ nav > div {
     line-height: 0.8;
   }
   .overlay-menu {
-    gap: 1rem;
+    gap: 1.5rem;
   }
 }

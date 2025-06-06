@@ -1,12 +1,105 @@
+// Add this at the very beginning of your js file, before any other code
+document.addEventListener('DOMContentLoaded', function() {
+    // Create and show loader immediately
+    const loader = document.createElement('div');
+    loader.className = 'page-loader';
+    loader.innerHTML = `
+        <div class="loader-content">
+            <div class="loader-circle"></div>
+            <div class="loader-text">Loading</div>
+        </div>
+    `;
+    document.body.appendChild(loader);
+    
+    // Add styles for loader
+    const style = document.createElement('style');
+    style.textContent = `
+        .page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #0a0a0a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        
+        .loader-content {
+            text-align: center;
+        }
+        
+        .loader-circle {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            animation: spin 1s infinite linear;
+        }
+        
+        .loader-text {
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 3px;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+        
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        /* Hide all content initially */
+        body > *:not(.page-loader) {
+            opacity: 0;
+            visibility: hidden;
+        }
+    `;
+    document.head.appendChild(style);
+    
+    // Wait for window load to remove the loader
+    window.addEventListener('load', function() {
+        // Give a slight delay to ensure all assets are ready
+        setTimeout(() => {
+            // Show content
+            document.querySelectorAll('body > *:not(.page-loader)').forEach(el => {
+                gsap.to(el, {
+                    opacity: 1,
+                    visibility: 'visible',
+                    duration: 0.5
+                });
+            });
+            
+            // Fade out loader
+            gsap.to(loader, {
+                opacity: 0,
+                duration: 0.8,
+                onComplete: function() {
+                    loader.remove();
+                }
+            });
+        }, 1000);
+    });
+});
+
+
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize GSAP
     gsap.registerPlugin(ScrollTrigger);
     
     // Split text animation for header
     const headerText = document.querySelector('.header h1');
+    
     const subtitle = document.querySelector('.subtitle');
     const scrollIndicator = document.querySelector('.scroll-indicator');
-    
+    console.log(machinesGrid);
+
     // Header animations
     gsap.to(headerText, {
         y: 0,
@@ -361,7 +454,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Add 3D tilt effect to machine cards
-    const cards = document.querySelectorAll('.machine-card');
+    const cards = document.querySelectorAll('.machine-cards');
+    console.log(`Found ${cards.length} machine cards for 3D tilt effect.`);
+    
     
     cards.forEach(card => {
         card.addEventListener('mousemove', function(e) {
@@ -393,106 +488,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Loading animation
-    window.addEventListener('load', function() {
-        const loader = document.createElement('div');
-        loader.className = 'page-loader';
-        loader.innerHTML = `
-            <div class="loader-content">
-                <div class="loader-circle"></div>
-                <div class="loader-text">Loading</div>
-            </div>
-        `;
-        document.body.appendChild(loader);
-        
-        // Add styles for loader
-        const style = document.createElement('style');
-        style.textContent = `
-            .page-loader {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: #0a0a0a;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                z-index: 9999;
-            }
-            
-            .loader-content {
-                text-align: center;
-            }
-            
-            .loader-circle {
-                width: 40px;
-                height: 40px;
-                border: 3px solid rgba(255, 255, 255, 0.3);
-                border-top-color: white;
-                border-radius: 50%;
-                margin: 0 auto 15px;
-                animation: spin 1s infinite linear;
-            }
-            
-            .loader-text {
-                color: white;
-                font-family: 'Montserrat', sans-serif;
-                letter-spacing: 3px;
-                font-size: 12px;
-                text-transform: uppercase;
-            }
-            
-            @keyframes spin {
-                to {
-                    transform: rotate(360deg);
-                }
-            }
-        `;
-        document.head.appendChild(style);
-        
-        // Hide loader after everything is loaded
-        setTimeout(() => {
-            gsap.to(loader, {
-                opacity: 0,
-                duration: 0.8,
-                onComplete: function() {
-                    loader.remove();
-                }
-            });
-        }, 1000);
-    });
-    
-    // Magnetic effect for CTA buttons
-    gsap.utils.toArray('.cta-btn').forEach(btn => {
-        btn.addEventListener('mousemove', function(e) {
-            const rect = this.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            const xc = rect.width / 2;
-            const yc = rect.height / 2;
-            
-            const dx = x - xc;
-            const dy = y - yc;
-            
-            gsap.to(this, {
-                x: dx / 10,
-                y: dy / 10,
-                duration: 0.3,
-                ease: "power2.out"
-            });
-        });
-        
-        btn.addEventListener('mouseleave', function() {
-            gsap.to(this, {
-                x: 0,
-                y: 0,
-                duration: 0.5,
-                ease: "elastic.out(1, 0.5)"
-            });
-        });
-    });
     
     // Horizontal scroll for machines section on mobile
     if (window.innerWidth < 768) {
@@ -706,12 +701,12 @@ const machines = [
     description:
       "Precision foil embossing machine creating elegant metallic finishes and raised textures for premium applications.",
     image: "./galleryImage/12.jpg?height=400&width=600",
-    // specifications: {
-    //   "Max Size": "750x550mm",
-    //   Pressure: "200kN",
-    //   Temperature: "Room-200°C",
-    //   "Foil Width": "640mm",
-    // },
+    specifications: {
+      "Max Size": "750x550mm",
+      Pressure: "200kN",
+      Temperature: "Room-200°C",
+      "Foil Width": "640mm",
+    },
     features: ["Hot foil stamping", "Embossing capability", "Temperature control", "Precision registration"],
   },
 ]
@@ -799,7 +794,7 @@ function openModal(machine) {
   const modalBadge = document.getElementById("modal-badge")
   const modalTitle = document.getElementById("modal-title")
   const modalDescription = document.getElementById("modal-description")
-//   const modalSpecs = document.getElementById("modal-specs")
+  const modalSpecs = document.getElementById("modal-specs")
   const modalFeatures = document.getElementById("modal-features")
 
   modalImg.src = machine.image
@@ -809,16 +804,16 @@ function openModal(machine) {
   modalDescription.textContent = machine.description
 
   // Render specifications
-//   modalSpecs.innerHTML = ""
-//   Object.entries(machine.specifications).forEach(([key, value]) => {
-//     const specItem = document.createElement("div")
-//     specItem.className = "spec-item"
-//     specItem.innerHTML = `
-//             <span class="spec-label">${key}</span>
-//             <span class="spec-value">${value}</span>
-//         `
-//     modalSpecs.appendChild(specItem)
-//   })
+  // modalSpecs.innerHTML = ""
+  // Object.entries(machine.specifications).forEach(([key, value]) => {
+  //   const specItem = document.createElement("div")
+  //   specItem.className = "spec-item"
+  //   specItem.innerHTML = `
+  //           <span class="spec-label">${key}</span>
+  //           <span class="spec-value">${value}</span>
+  //       `
+  //   modalSpecs.appendChild(specItem)
+  // })
 
   // Render features
   modalFeatures.innerHTML = ""
