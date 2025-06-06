@@ -560,3 +560,54 @@ function initSheryResponsive() {
 }
 
 initSheryResponsive();
+
+
+// function textAnimation2() {
+//   let packagetext = document.querySelector(".package");
+//   let brandtext = document.querySelector(".brand");
+//   let packageContent = packagetext.textContent;
+//   let brandContent = brandtext.textContent;
+//   console.log(packageContent);
+//   // let words1 = packageContent.split("");
+//   // let words2 = brandContent.split("");
+//   console.log(words2);
+//  console.log(words1);
+ 
+
+//   var clutter1 = "";
+//   words1.forEach(function (elem, idx) {
+//     clutter1 += `<span class="clutter1">${elem}</span>`;
+//   });
+//   var clutter2 = "";
+//   words2.forEach(function (elem, idx) {
+//     clutter2 += `<span class="clutter2">${elem}</span>`;
+//   });
+
+//   packagetext.innerHTML = clutter1;
+//   brandtext.innerHTML = clutter2;
+
+//   gsap.from(".clutter1", {
+//     opacity: 0,
+//     duration: 0.7,
+//     delay: 0.3,
+//     stagger: 0.15,
+//     scrollTrigger: {
+//       trigger: ".package",
+//       scroller: "body",
+//       markers: false, // Set to false for production
+//     },
+//   },"same");
+
+//    gsap.from(".clutter2", {
+//     opacity: 0,
+//     duration: 0.6,
+//     delay: 0.3,
+//     stagger: 0.15,
+//     scrollTrigger: {
+//       trigger: ".brand",
+//       scroller: "body",
+//       markers: false, // Set to false for production
+//     },
+//   },"same");
+// }
+// textAnimation2();
