@@ -1470,13 +1470,17 @@ button {
 .brand-logo {
   width: 7.5rem;
   height: 7.5rem;
+  margin-top: -0.8rem;
   margin-bottom: -1rem;
 }
 
 .brand-name {
   font-weight: 700;
   font-size: 1.5rem;
-  color: var(--luxury-900);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .brand-tagline {
