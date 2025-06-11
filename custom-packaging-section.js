@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         try {
             // Create container for loading message
-            const container = document.getElementById('3d-model-viewer');
+            const container = document.getElementById('model-viewer-3d');
             container.innerHTML = `
                 <div class="loading-model">
                     <div class="loading-spinner"></div>
@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 500);
         } catch (error) {
             console.error("Error initializing 3D viewer:", error);
-            document.getElementById('3d-model-viewer').innerHTML = `
+            document.getElementById('model-viewer-3d').innerHTML = `
                 <div class="error-message">
                     <i class="fas fa-exclamation-triangle"></i>
                     <p>Unable to load 3D viewer. Please ensure WebGL is enabled in your browser.</p>
@@ -252,7 +252,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add touch instructions
     function addTouchInstructions() {
         if ('ontouchstart' in window) {
-            const container = document.getElementById('3d-model-viewer');
+            const container = document.getElementById('model-viewer-3d');
             const instructions = document.createElement('div');
             instructions.className = 'touch-instructions';
             instructions.textContent = '👆 Touch and drag to rotate, pinch to zoom';
@@ -507,7 +507,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function onWindowResize() {
         if (!isModelInitialized) return;
         
-        const container = document.getElementById('3d-model-viewer');
+        const container = document.getElementById('model-viewer-3d');
         const width = container.clientWidth;
         const height = container.clientHeight;
         
@@ -600,7 +600,7 @@ document.addEventListener('DOMContentLoaded', function() {
             } catch (error) {
                 console.error("Error initializing 3D viewer:", error);
                 // Fallback if Three.js initialization fails
-                document.getElementById('3d-model-viewer').innerHTML = 
+                document.getElementById('model-viewer-3d').innerHTML = 
                     '<div class="error-message">' +
                     '<i class="fas fa-exclamation-triangle"></i>' +
                     '<p>Unable to load 3D viewer. Please ensure WebGL is enabled in your browser.</p>' +
@@ -678,7 +678,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Use EmailJS to send the form
         // You need to configure your EmailJS account and template first
-        emailjs.send('your_service_id', 'your_template_id', formData)
+        emailjs.send('service_9ezn8vl', 'template_ote77vb', formData)
             .then(function() {
                 contactForm.reset();
                 contactForm.style.display = 'none';
@@ -705,7 +705,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if ('ontouchstart' in window) {
         document.addEventListener('touchstart', function(e) {
             // If the touch is inside the 3D viewer, prevent page scrolling
-            if (e.target.closest('#3d-model-viewer') && e.touches.length > 1) {
+            if (e.target.closest('#model-viewer-3d') && e.touches.length > 1) {
                 e.preventDefault();
             }
         }, { passive: false });
