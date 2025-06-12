@@ -1,4 +1,5 @@
 /* @import url("https://fonts.cdnfonts.com/css/pp-neue-montreal"); */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 @font-face {
   font-family: "PP Neue Montreal";
@@ -25,11 +26,6 @@
   src: url("./pp-editorial-old/ppeditorialold-regular.otf") format("opentype");
 }
 
-@font-face {
-  font-family: "evange";
-  src: url("./evange-danve-font-1747893656-0/EvangeDanveDemoRegular-BF682e8ce70f298.ttf")
-    format("truetype");
-}
 
 * {
   margin: 0;
@@ -41,7 +37,7 @@ html {
   height: 100%;
   width: 100%;
   font-family: "PP Neue Montreal";
-  font-family: "Gilroy";
+  font-family: "Montserrat", sans-serif;
   /* overflow-x: hidden; */
 }
 
@@ -411,7 +407,6 @@ nav > div {
 
 .line h1 {
   padding-left: 0.7rem;
-  /* background-color: red; */
   padding: 0.3rem;
 }
 
@@ -439,6 +434,10 @@ nav > div {
   line-height: 1.5;
   font-weight: 500;
   text-align: center;
+  color: #fff;
+  background: rgba(218, 71, 3, 0.911);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
 }
 
 .header > .line {
@@ -495,6 +494,18 @@ nav > div {
 @media (max-width: 900px) {
   .burger {
     left: 85%;
+  }
+  .line p{
+    font-size: 0.85rem;
+  }
+  .cta-label p {
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 600px) {
+ .cta-label p {
+    font-size: 0.68rem;
   }
 }
 
@@ -621,18 +632,6 @@ nav > div {
   flex-direction: column;
 }
 
-/* .titleh1 {
-  text-align: center;
-  font-size: 5.5rem;
-  padding: 0.5rem;
-  letter-spacing: -3px;
-  font-weight: 600;
-  opacity: 0.9;
-  font-family: "Gilroy";
-  font-style: normal;
-  color: rgb(0, 0, 0);
-} */
-
 .titleh1 span {
   display: inline-block;
   position: relative;
@@ -640,9 +639,10 @@ nav > div {
   font-size: 5.5rem;
   padding: 0.5rem;
   letter-spacing: -19px;
-  font-weight: 600;
+  font-weight: 700;
   opacity: 0.9;
-  font-family: "Gilroy";
+  /* font-family: "Gilroy"; */
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   color: rgb(0, 0, 0);
 }
@@ -2136,12 +2136,23 @@ button {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .section-header .custom1{
+    font-size: 3rem;
+  }
+
+  .section-header .packaging1{
+    font-size: 3.5rem;
+  }
+
   .feature-list {
     grid-template-columns: 1fr;
   }
 
   .design-options {
     grid-template-columns: 1fr;
+  }
+  .design-tool-h3{
+    font-weight: 600;
   }
 
   .dimensions,
@@ -2155,6 +2166,12 @@ button {
 
   .contact-form {
     grid-template-columns: 1fr;
+  }
+
+  .contact-section-h3{
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -1px;
   }
 
   .form-group.full-width {
@@ -2181,12 +2198,12 @@ button {
   .gallery-item .overlay {
     transform: translateY(0px);
   }
+  .gallery-h3{
+    letter-spacing: -1px;
+  }
 }
 
 @media (max-width: 480px) {
-  h2 {
-    font-size: 1.8rem;
-  }
 
   .custom-packaging {
     padding: 50px 0;
