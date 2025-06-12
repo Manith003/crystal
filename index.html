@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>Crystal Packaging</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="chatbot.css">
 </head>
 
 <body>
@@ -38,6 +39,48 @@
         </div>
     </div>
     <main>
+
+        <div id="chatOpenButton" class="chat-open-button">
+        <i class="fas fa-comments"></i>
+        <span>Chat with us</span>
+    </div>
+
+    <!-- Chat Container -->
+    <div class="chat-container" id="chatContainer">
+        <!-- Chat Header -->
+        <div class="chat-header">
+            <div class="logo">
+                <i class="fas fa-box-open"></i>
+                <h2>Box Assistant</h2>
+            </div>
+            <div class="chat-controls">
+                <button id="chatMinimizeBtn" title="Minimize">
+                    <i class="fas fa-minus"></i>
+                </button>
+                <button id="chatCloseBtn" title="Close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Chat Body -->
+        <div class="chat-body" id="chatBody">
+            <!-- Messages Area -->
+            <div class="messages" id="messages">
+                <div class="message bot">
+                </div>
+            </div>
+            
+            <!-- Chat Input -->
+            <div class="chat-input">
+                <input type="text" id="userInput" placeholder="Ask about our box solutions...">
+                <button id="sendBtn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
         <div class="container">
             <div class="hero-img">
                 <img src="./backday.png" alt="" srcset="">
@@ -604,7 +647,8 @@
 
                         <div class="form-group full-width">
                             <label for="project-details">Project Details</label>
-                            <textarea id="project-details" name="project-details" rows="5" required placeholder="Enter project details with custom dimensions"></textarea>
+                            <textarea id="project-details" name="project-details" rows="5" required
+                                placeholder="Enter project details with custom dimensions"></textarea>
                         </div>
 
                         <div class="form-group full-width">
@@ -627,7 +671,7 @@
                                 <option value="more-than-10000">More than 10,000</option>
                             </select>
                         </div>
-                        
+
                         <button type="submit" class="cta-button">
                             <i class="fas fa-paper-plane"></i> Send Inquiry
                         </button>
@@ -819,6 +863,7 @@
     <script type="module" src="script.js"></script>
     <script src="flute.js"></script>
     <script src="custom-packaging-section.js"></script>
+    <script src="chatbot.js"></script>
 </body>
 
 </html>
