@@ -742,6 +742,12 @@ button {
   display: none;
 }
 
+@media (min-width:1440px) {
+  .product-container {
+    max-width: 130rem;
+  }
+}
+
 @media (max-width: 768px) {
   .title-fraction-mobile {
     display: block;
@@ -1376,7 +1382,6 @@ button {
 
 /* Premium Color Palette Enhancement */
 
-/* still some changes to be made in this section */
 
 :root {
   --premium-orange: #d97706;

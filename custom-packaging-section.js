@@ -221,8 +221,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Zoom in function
     function zoomIn() {
-        if (!controls) return;
+        if (!controls) {
+            console.warn("Controls not initialized for zoom in");
+            return;
+        }
         
+        console.log("Zooming in...");
         // Get the current distance
         const currentDistance = camera.position.distanceTo(controls.target);
         // Calculate new distance (zoom in by 20%)
@@ -232,6 +236,7 @@ document.addEventListener('DOMContentLoaded', function() {
         camera.position.copy(controls.target).add(
             camera.position.clone().sub(controls.target).normalize().multiplyScalar(newDistance)
         );
+        console.log(`Zoomed in to distance: ${newDistance}`);
     }
     
     // Zoom out function
@@ -583,6 +588,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Start designing button action
     startDesigningButton.addEventListener('click', function() {
+        console.clear(); // Clear previous console messages
         console.log("Start designing button clicked");
         
         // Show the 3D model viewer section
@@ -593,41 +599,96 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Initialize Three.js (if not already initialized)
         setTimeout(() => {
-            try {
+            if (!isModelInitialized) {
+                console.log("Initializing 3D model...");
                 initThreeJS();
+                console.log("Model initialization triggered");
+            } else {
+                console.log("3D model already initialized");
                 updateModelInfo();
-                console.log("3D initialization completed");
-            } catch (error) {
-                console.error("Error initializing 3D viewer:", error);
-                // Fallback if Three.js initialization fails
-                document.getElementById('model-viewer-3d').innerHTML = 
-                    '<div class="error-message">' +
-                    '<i class="fas fa-exclamation-triangle"></i>' +
-                    '<p>Unable to load 3D viewer. Please ensure WebGL is enabled in your browser.</p>' +
-                    '</div>';
             }
         }, 800);
     });
     
-    // Rotation controls for the model
+    // Correct rotation controls for the model
     rotateLeftButton.addEventListener('click', function() {
-        if (!isModelInitialized || !controls) return;
-        controls.rotateLeft(Math.PI / 6); // 30 degrees
+        if (!isModelInitialized || !controls) {
+            console.warn("Controls not initialized yet");
+            return;
+        }
+        
+        // Get current rotation angle in radians
+        const currentAngle = Math.atan2(
+            camera.position.z - controls.target.z,
+            camera.position.x - controls.target.x
+        );
+        
+        // Calculate new position - rotate by 30 degrees (PI/6)
+        const distance = new THREE.Vector3().subVectors(camera.position, controls.target).length();
+        const newAngle = currentAngle + Math.PI / 6;
+        
+        camera.position.x = controls.target.x + distance * Math.cos(newAngle);
+        camera.position.z = controls.target.z + distance * Math.sin(newAngle);
+        
+        // Update camera and controls
+        camera.lookAt(controls.target);
+        controls.update();
     });
     
     rotateRightButton.addEventListener('click', function() {
-        if (!isModelInitialized || !controls) return;
-        controls.rotateLeft(-Math.PI / 6); // -30 degrees
+        if (!isModelInitialized || !controls) {
+            console.warn("Controls not initialized yet");
+            return;
+        }
+        
+        // Get current rotation angle in radians
+        const currentAngle = Math.atan2(
+            camera.position.z - controls.target.z,
+            camera.position.x - controls.target.x
+        );
+        
+        // Calculate new position - rotate by -30 degrees (-PI/6)
+        const distance = new THREE.Vector3().subVectors(camera.position, controls.target).length();
+        const newAngle = currentAngle - Math.PI / 6;
+        
+        camera.position.x = controls.target.x + distance * Math.cos(newAngle);
+        camera.position.z = controls.target.z + distance * Math.sin(newAngle);
+        
+        // Update camera and controls
+        camera.lookAt(controls.target);
+        controls.update();
     });
     
     resetViewButton.addEventListener('click', function() {
-        if (!isModelInitialized || !controls) return;
-        controls.reset();
+        if (!isModelInitialized || !controls) {
+            console.warn("Controls not initialized yet");
+            return;
+        }
+        // Full reset of camera position and rotation
+        camera.position.set(0, 0, 5);
+        controls.target.set(0, 0, 0);
+        controls.update();
+        console.log("View reset");
     });
     
-    // Add zoom button functionality
-    zoomInButton.addEventListener('click', zoomIn);
-    zoomOutButton.addEventListener('click', zoomOut);
+    // More robust zoom button handlers
+    zoomInButton.addEventListener('click', function() {
+        console.log("Zoom in clicked");
+        if (!isModelInitialized) {
+            console.warn("Model not initialized yet");
+            return;
+        }
+        zoomIn();
+    });
+    
+    zoomOutButton.addEventListener('click', function() {
+        console.log("Zoom out clicked");
+        if (!isModelInitialized) {
+            console.warn("Model not initialized yet");
+            return;
+        }
+        zoomOut();
+    });
     
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

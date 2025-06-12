@@ -298,11 +298,10 @@ swiperAdded();
 function textAnimation() {
   let text = document.querySelector(".titleh1");
   let textContent = text.textContent;
-  console.log(textContent);
+
   let words = textContent.split("");
   let halfValue = Math.floor(words.length / 2);
 
-  console.log(halfValue);
 
   var clutter = "";
   words.forEach(function (elem, idx) {
@@ -515,7 +514,6 @@ smoothScrollLenis();
 function sheryAnimation() {
   // Only run on desktop (devices wider than 900px)
   if (window.innerWidth > 900) {
-    console.log("Initializing SheryJS animations for desktop");
     
     // Mouse follower effect
     Shery.mouseFollower({
@@ -529,8 +527,6 @@ function sheryAnimation() {
       ease: "cubic-bezier(0.23, 1, 0.320, 1)",
       duration: 1,
     });
-  } else {
-    console.log("SheryJS animations disabled on mobile devices");
   }
 }
 

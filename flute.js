@@ -361,7 +361,6 @@ function createComparisonChart() {
 
 // Initialize the application
 function init() {
-    console.log('Initializing flute technology section...');
     const fluteGrid = document.getElementById('fluteGrid');
     
     if (!fluteGrid) {
@@ -385,7 +384,6 @@ function init() {
         });
     });
     
-    console.log('Flute technology section initialized successfully');
 }
 
 // Start the application when DOM is loaded
