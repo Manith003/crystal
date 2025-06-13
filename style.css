@@ -259,6 +259,7 @@ nav > div {
 .hero-copy {
   position: relative;
   z-index: 1;
+  margin-top: -9rem;
 }
 
 .cta-label {
@@ -414,11 +415,13 @@ nav > div {
 .line p {
   font-size: 1.3rem;
   line-height: 1.5;
-  font-weight: 500;
+  font-weight: 400;
   text-align: center;
   color: rgb(255, 255, 255);
+  background-color:#141412;
   padding: 0.5rem 1rem;
   border-radius: 50px;
+  display: none;
 }
 
 .header > .line {
@@ -466,6 +469,9 @@ nav > div {
 }
 
 @media (max-width: 900px) {
+  .hero-copy{
+    margin-top: -4rem;
+  }
   .burger {
     left: 85%;
   }
@@ -736,7 +742,7 @@ button {
 
 @media (max-width: 768px) {
   .titleh1 span {
-    font-size: 2.1rem;
+    /* font-size: 2.1rem; */
     padding: 0.2rem;
     letter-spacing: -9px;
   }
