@@ -611,11 +611,10 @@ body {
 @media (max-width: 768px) {
     .chat-container {
         width: 340px;
-        height: 520px;
         right: 20px;
     }
     .chat-input{
-        padding: 1rem 1.5rem 3rem;
+        padding: 1rem 1.5rem 1rem;
     }
     
 }
@@ -623,7 +622,7 @@ body {
 @media (max-width: 480px) {
     .chat-container {
         width: calc(100% - 32px);
-        max-height: 80vh;
+        /* max-height: 80vh; */
         right: 16px;
     }
     

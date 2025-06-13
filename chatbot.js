@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 top: messagesContainer.scrollHeight,
                 behavior: 'smooth'
             });
-        }, 100);
+        }, 1000);
     }
 
     // Add typing indicator with improved animation
