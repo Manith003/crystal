@@ -1,4 +1,3 @@
-/* @import url("https://fonts.cdnfonts.com/css/pp-neue-montreal"); */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 @font-face {
@@ -11,14 +10,6 @@
       format("opentype"),
     url("./pp-neue-montreal-cufonfonts/ppneuemontreal-regular.otf")
       format("opentype");
-}
-
-@font-face {
-  font-family: "Gilroy";
-  src: url("./gilroy/Gilroy-Medium.ttf") format("truetype"),
-    url("./gilroy/Gilroy-Bold.ttf") format("truetype"),
-    url("./gilroy/Gilroy-Light.ttf") format("truetype"),
-    url("./gilroy/Gilroy-Regular.ttf") format("truetype");
 }
 
 @font-face {
@@ -38,7 +29,6 @@ html {
   width: 100%;
   font-family: "PP Neue Montreal";
   font-family: "Montserrat", sans-serif;
-  /* overflow-x: hidden; */
 }
 
 main {
@@ -56,8 +46,6 @@ img {
 
 h1 {
   text-align: center;
-  /* color: #fff; */
-  /* font-size: 5rem; */
   font-size: clamp(3rem, 5vw, 8rem);
   font-weight: 500;
   line-height: 1;
@@ -67,7 +55,6 @@ h1 span {
   font-family: "PP Editorial Old";
   font-weight: 400;
   font-style: italic;
-  /* font-size: 4.5rem; */
   font-size: clamp(2rem, 4.5vw, 7rem);
   -webkit-font-smoothing: antialiased;
   padding: 0 0.7rem 0 0;
@@ -79,7 +66,6 @@ p {
   text-decoration: none;
   text-transform: uppercase;
   color: #000;
-  /* font-size: 12px; */
   font-size: clamp(0.8rem, 0.6vw, 3rem);
   font-weight: 500;
   line-height: 1;
@@ -126,18 +112,17 @@ nav > div {
   flex: 1;
 }
 
-.logo a {
+.logo1 a {
   position: relative;
   text-transform: capitalize;
-  /* font-size: 1.2rem; */
   font-size: clamp(1.2rem, 1vw, 3.9rem);
   font-weight: 500;
   z-index: 100;
-  color: #000000; /* Default black color */
+  color: #000000; 
   transition: color 2s ease;
 }
 .logo-white a {
-  color: #ffffff; /* White color when menu is open */
+  color: #ffffff;
 }
 
 .nav-link {
@@ -149,7 +134,6 @@ nav > div {
 }
 
 .nav-link a {
-  /* font-size: 0.9rem; */
   font-size: clamp(0.9rem, 0.6vw, 3rem);
   text-align: center;
   font-weight: 500;
@@ -184,11 +168,9 @@ nav > div {
 }
 .burger::before {
   top: 10px;
-  /* right: 15%; */
 }
 .burger::after {
   bottom: 10px;
-  /* right: 15%; */
 }
 .burger.active::before {
   transform: translateY(3px) rotate(45deg);
@@ -199,7 +181,7 @@ nav > div {
 
 .burger.active::before,
 .burger.active::after {
-  background-color: #ffffff; /* White color when active */
+  background-color: #ffffff;
 }
 
 .overlay-2 {
@@ -377,7 +359,7 @@ nav > div {
 }
 
 .loading-image {
-  width: 600px; /* Adjust as needed */
+  width: 600px;
   height: auto;
   position: absolute;
   top: 50%;
@@ -435,7 +417,6 @@ nav > div {
   font-weight: 500;
   text-align: center;
   color: rgb(255, 255, 255);
-  /* background: rgba(218, 71, 3, 0.911); */
   padding: 0.5rem 1rem;
   border-radius: 50px;
 }
@@ -465,16 +446,10 @@ nav > div {
   }
   .burger {
     left: 94%;
-    /* right: 3%; */
   }
   .nav-link {
     display: none;
   }
-
-  /* .nav {
-    padding: 1.75em 3em 0 1.3em;
-    background-color: red;
-  } */
 
   .menu-item a {
     font-size: 3rem;
@@ -486,7 +461,6 @@ nav > div {
   }
   .loading-image {
     width: 350px;
-    /* rotate: 3deg; */
     left: 51%;
   }
 }
@@ -537,7 +511,6 @@ nav > div {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  /* background-color: rgb(87, 60, 60); */
 }
 
 .marquee-content {
@@ -646,7 +619,6 @@ nav > div {
 .card-wrapper {
   margin: 0 60px 35px;
   padding: 0px 15px 10px;
-  /* background-color: brown; */
   overflow: hidden;
 }
 
@@ -681,7 +653,6 @@ nav > div {
   margin: 16px 0 18px;
   text-align: left;
   font-weight: 600;
-  /* background-color: rgba(219, 219, 219, 0.404); */
   text-align: center;
 }
 
@@ -1067,7 +1038,7 @@ button {
   top: 100%;
   left: 0;
   right: 0;
-  z-index: 20; /* Higher z-index for details */
+  z-index: 20;
   margin-top: 0.5rem;
   background: white;
   border-radius: 0.75rem;
@@ -1319,7 +1290,7 @@ button {
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
     width: 100%;
-    scrollbar-width: thin; /* For Firefox */
+    scrollbar-width: thin; 
   }
 
   /* Custom scrollbar for webkit browsers */

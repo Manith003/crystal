@@ -47,6 +47,11 @@ body {
     z-index: 1000;
     transform-origin: bottom right;
     animation: fadeInUp 0.4s ease-out forwards;
+     animation: none;
+}
+
+.chat-container:not(.active) {
+    display: none !important; 
 }
 
 .chat-container:hover {

@@ -186,7 +186,7 @@ function nav() {
       toggleButton.classList.toggle("active");
       overlay2.classList.toggle("open");
 
-      document.querySelector(".logo").classList.toggle("logo-white");
+      document.querySelector(".logo1").classList.toggle("logo-white");
 
       if (isOpen) {
         tl.reverse(); // Animate overlay and menu items out (bottom to top)
@@ -521,7 +521,7 @@ function sheryAnimation() {
     });
 
     // Magnetic effect on navigation elements
-    Shery.makeMagnet(".burger, .logo", {
+    Shery.makeMagnet(".burger", {
       ease: "cubic-bezier(0.23, 1, 0.320, 1)",
       duration: 1,
     });

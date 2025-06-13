@@ -81,6 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
         chatState.isOpen = true;
         chatContainer.classList.remove('hidden');
         chatOpenButton.classList.add('hidden');
+        chatContainer.classList.add('active')
         
         // Add entry animation
         chatContainer.style.animation = 'fadeInUp 0.4s ease-out forwards';
@@ -106,7 +107,6 @@ document.addEventListener('DOMContentLoaded', function() {
         scrollToBottom();
     });
 
-    // Close chat when clicking close button
     chatCloseBtn.addEventListener('click', function() {
         // Add exit animation
         chatContainer.style.animation = 'fadeInUp 0.3s ease-in reverse';
@@ -114,6 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
             chatContainer.classList.add('hidden');
             chatOpenButton.classList.remove('hidden');
+             chatContainer.classList.remove('active');
             chatState.isOpen = false;
         }, 280);
     });
