@@ -118,7 +118,7 @@ nav > div {
   font-size: clamp(1.2rem, 1vw, 3.9rem);
   font-weight: 500;
   z-index: 100;
-  color: #000000; 
+  color: #000000;
   transition: color 2s ease;
 }
 .logo-white a {
@@ -259,7 +259,7 @@ nav > div {
 .hero-copy {
   position: relative;
   z-index: 1;
-  margin-top: -9rem;
+  margin-top: -6.5rem;
 }
 
 .cta-label {
@@ -418,7 +418,7 @@ nav > div {
   font-weight: 400;
   text-align: center;
   color: rgb(255, 255, 255);
-  background-color:#141412;
+  background-color: #141412;
   padding: 0.5rem 1rem;
   border-radius: 50px;
   display: none;
@@ -469,13 +469,13 @@ nav > div {
 }
 
 @media (max-width: 900px) {
-  .hero-copy{
+  .hero-copy {
     margin-top: -4rem;
   }
   .burger {
     left: 85%;
   }
-  .line p{
+  .line p {
     font-size: 0.85rem;
   }
   .cta-label p {
@@ -484,7 +484,7 @@ nav > div {
 }
 
 @media (max-width: 600px) {
- .cta-label p {
+  .cta-label p {
     font-size: 0.68rem;
   }
 }
@@ -497,6 +497,7 @@ nav > div {
   z-index: 2;
   width: 100%;
   text-align: center;
+
 }
 .marquee-heading h2 {
   font-size: 2.8rem;
@@ -715,12 +716,12 @@ button {
   display: none;
 }
 
-@media (min-width:1440px) {
+@media (min-width: 1440px) {
   .product-container {
     max-width: 130rem;
   }
   .titleh1 span {
-      letter-spacing: -13px;
+    letter-spacing: -13px;
   }
 }
 
@@ -1296,7 +1297,7 @@ button {
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
     width: 100%;
-    scrollbar-width: thin; 
+    scrollbar-width: thin;
   }
 
   /* Custom scrollbar for webkit browsers */
@@ -1355,7 +1356,6 @@ button {
 
 /* Premium Color Palette Enhancement */
 
-
 :root {
   --premium-orange: #d97706;
   --premium-orange-dark: #b45309;
@@ -1378,7 +1378,8 @@ button {
 .custom-packaging {
   position: relative;
   padding: 4rem 0;
-  background: linear-gradient(135deg, #f9fafb, #f3f4f6);
+  /* background: linear-gradient(135deg, #f9fafb, #f3f4f6); */
+    background: var(--gradient-hero);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2109,11 +2110,11 @@ button {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .section-header .custom1{
+  .section-header .custom1 {
     font-size: 3rem;
   }
 
-  .section-header .packaging1{
+  .section-header .packaging1 {
     font-size: 3.5rem;
   }
 
@@ -2124,7 +2125,7 @@ button {
   .design-options {
     grid-template-columns: 1fr;
   }
-  .design-tool-h3{
+  .design-tool-h3 {
     font-weight: 600;
   }
 
@@ -2141,7 +2142,7 @@ button {
     grid-template-columns: 1fr;
   }
 
-  .contact-section-h3{
+  .contact-section-h3 {
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: -1px;
@@ -2171,13 +2172,12 @@ button {
   .gallery-item .overlay {
     transform: translateY(0px);
   }
-  .gallery-h3{
+  .gallery-h3 {
     letter-spacing: -1px;
   }
 }
 
 @media (max-width: 480px) {
-
   .custom-packaging {
     padding: 50px 0;
   }
@@ -2384,13 +2384,13 @@ button {
   transform: scale(1.1);
 }
 
-.contact-item span {
-  color: var(--luxury-700);
-  /* font-size: 0.875rem; */
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.5;
+.contact-item .address-list {
+  padding-left: 20px;
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--luxury-600);
 }
+
 
 /* Social Media */
 .social-section {
