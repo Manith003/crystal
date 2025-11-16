@@ -739,7 +739,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Use EmailJS to send the form
         // You need to configure your EmailJS account and template first
-        emailjs.send('service_9ezn8vl', 'template_ote77vb', formData)
+        emailjs.send('service_9ezn8vl', 'template_63eyxz2', formData)
             .then(function() {
                 contactForm.reset();
                 contactForm.style.display = 'none';
