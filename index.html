@@ -1,803 +1,1194 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-62JT27RQ9E"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./loadingimagemain.avif" type="image/x-icon">
+      gtag("config", "G-62JT27RQ9E");
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./loadingimagemain.avif"
+      type="image/x-icon"
+    />
     <link rel="preload" as="image" href="./heroimagemain.avif" />
     <link rel="preload" as="image" href="./loadingimagemain.avif" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.4/dist/lenis.css">
-    <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" /> <!-- Recommended -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/lenis@1.3.4/dist/lenis.css"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
+    <!-- Recommended -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
     <title>Crystal Packaging</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="chatbot.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="chatbot.css" />
+  </head>
 
-<body>
+  <body>
     <div class="loading">
-        <div class="overlay">
-            <div class="block"></div>
-            <div class="block"></div>
+      <div class="overlay">
+        <div class="block"></div>
+        <div class="block"></div>
+      </div>
+      <div class="intro-logo">
+        <div class="word" id="word-1">
+          <h1><span>crystal</span></h1>
         </div>
-        <div class="intro-logo">
-            <div class="word" id="word-1">
-                <h1><span>crystal</span></h1>
-            </div>
-            <div class="word" id="word-2">
-                <h1>packaging</h1>
-            </div>
+        <div class="word" id="word-2">
+          <h1>packaging</h1>
         </div>
-        <div class="spinner-container">
-            <div class="spinner"></div>
-        </div>
+      </div>
+      <div class="spinner-container">
+        <div class="spinner"></div>
+      </div>
 
-        <div class="loading">
-            <img loading="lazy" decoding="async" src="./loadingimagemain.avif" class="loading-image" alt="Loading">
-        </div>
+      <div class="loading">
+        <img
+          loading="lazy"
+          decoding="async"
+          src="./loadingimagemain.avif"
+          class="loading-image"
+          alt="Loading"
+        />
+      </div>
     </div>
     <main>
-
-        <div class="chatbot">
-            <div id="chatOpenButton" class="chat-open-button">
-                <i class="fas fa-comments"></i>
-            </div>
-
-            <!-- Chat Container -->
-            <div class="chat-container" id="chatContainer">
-                <!-- Chat Header -->
-                <div class="chat-header">
-                    <div class="logo">
-                        <i class="fas fa-box-open"></i>
-                        <h2>Crystal Assistant</h2>
-                    </div>
-                    <div class="chat-controls">
-                        <button id="chatCloseBtn" title="Close">
-                            <i class="fas fa-times"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Chat Body -->
-                <div class="chat-body" id="chatBody">
-                    <!-- Messages Area -->
-                    <div class="messages" id="messages">
-                        <div class="message bot">
-                        </div>
-                    </div>
-
-                    <!-- Chat Input -->
-                    <div class="chat-input">
-                        <input type="text" id="userInput" placeholder="Ask about our box solutions...">
-                        <button id="sendBtn">
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
+      <div class="chatbot">
+        <div id="chatOpenButton" class="chat-open-button">
+          <i class="fas fa-comments"></i>
         </div>
 
-
-        <div class="container">
-            <div class="hero-img">
-                <img src="./backday.png" alt="" srcset="">
+        <!-- Chat Container -->
+        <div class="chat-container" id="chatContainer">
+          <!-- Chat Header -->
+          <div class="chat-header">
+            <div class="logo">
+              <i class="fas fa-box-open"></i>
+              <h2>Crystal Assistant</h2>
             </div>
-            <div class="nav">
-                <div class="logo1">
-                    <a href="#">CrystalPackaging</a>
-                </div>
-                <div class="nav-link">
-                    <a href="#collections">COLLECTIONS</a>
-                    <a href="#packaging-process">BOX MODEL</a>
-                    <a href="#custom-packaging">CUSTOM PACKAGING</a>
-                    <a href="#contact">CONTACT US</a>
-                </div>
-                <div class="menu-btn">
-                    <button class="burger"></button>
-                </div>
-                <div class="overlay-2">
-                    <div class="overlay-menu">
-                        <div class="menu-item">
-                            <p id="active"><a href="index.html">Home</a></p>
-                        </div>
-                        <!-- <div class="menu-item">
+            <div class="chat-controls">
+              <button id="chatCloseBtn" title="Close">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Chat Body -->
+          <div class="chat-body" id="chatBody">
+            <!-- Messages Area -->
+            <div class="messages" id="messages">
+              <div class="message bot"></div>
+            </div>
+
+            <!-- Chat Input -->
+            <div class="chat-input">
+              <input
+                type="text"
+                id="userInput"
+                placeholder="Ask about our box solutions..."
+              />
+              <button id="sendBtn">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="hero-img">
+          <img src="./backday.png" alt="" srcset="" />
+        </div>
+        <div class="nav">
+          <div class="logo1">
+            <a href="#">CrystalPackaging</a>
+          </div>
+          <div class="nav-link">
+            <a href="#collections">COLLECTIONS</a>
+            <a href="#packaging-process">BOX MODEL</a>
+            <a href="#custom-packaging">CUSTOM PACKAGING</a>
+            <a href="#contact">CONTACT US</a>
+          </div>
+          <div class="menu-btn">
+            <button class="burger"></button>
+          </div>
+          <div class="overlay-2">
+            <div class="overlay-menu">
+              <div class="menu-item">
+                <p id="active"><a href="index.html">Home</a></p>
+              </div>
+              <!-- <div class="menu-item">
                             <p><a href="./product.html">Shop now</a></p>
                         </div> -->
-                        <div class="menu-item">
-                            <p><a href="gallery.html">Gallery</a></p>
-                        </div>
-                    </div>
-                </div>
+              <div class="menu-item">
+                <p><a href="gallery.html">Gallery</a></p>
+              </div>
             </div>
-            <div class="header">
-                <div class="hero-copy">
-                    <div class="line" id="line1">
-                        <h1><span class="package">Packaging</span> that speaks.</h1>
-                    </div>
-                    <div class="line" id="line2">
-                        <h1>Built for your <span class="brand">brand.</span></h1>
-                    </div>
-                </div>
-                <div class="line">
-                    <p>Packaging that stays true to your product and your purpose.</p>
-                </div>
-            </div>
-            <div class="cta">
-                <div class="cta-label">
-                    <a href="#contact">
-                        <p>Enquire About Products</p>
-                    </a>
-                </div>
-                <div class="cta-icon">
-                    <ion-icon name="arrow-forward-outline"></ion-icon>
-                </div>
-            </div>
+          </div>
         </div>
-
-
-        <section class="page2 marquee">
-            <div class="marquee-heading">
-                <h2>our clients</h2>
+        <div class="header">
+          <div class="hero-copy">
+            <div class="line" id="line1">
+              <h1><span class="package">Packaging</span> that speaks.</h1>
             </div>
-            <div class="marquee">
-                <div class="marquee-content">
-                    <div class="marquee-item">
-                        <img class="markq" loading="lazy" src="./marquee-img/aavin.avif" alt="">
-                    </div>
-                    <div class="marquee-item">
-                        <img class="markq" loading="lazy" src="./marquee-img/logo.avif" alt="">
-                    </div>
-                    <div class="marquee-item">
-                        <img class="markq" loading="lazy" src="./marquee-img/main-logo.avif" alt="">
-                    </div>
-                    <div class="marquee-item">
-                        <img class="markq" loading="lazy"
-                            src="./marquee-img/SILAII_Logo_1200x628_f8d77866-c585-4d8c-9683-8018c78822d2_240x.avif"
-                            alt="">
-                    </div>
-                    <div class="marquee-item">
-                        <img class="markq" loading="lazy" src="./marquee-img/nexus.avif" alt="">
-                    </div>
-                    <div class="marquee-item">
-                        <img class="markq" loading="lazy" src="./marquee-img/cetus.avif" alt="">
-                    </div>
-                    <div class="marquee-item">
-                        <img class="markq" loading="lazy" src="./marquee-img/bab.avif" alt="">
-                    </div>
-                    <div class="marquee-item">
-                        <img class="markq" loading="lazy" src="./marquee-img/timeout.avif" alt="">
-                    </div>
-                </div>
-                <div class="marquee-content">
-                    <div class="marquee-item">
-                        <img class="markq" loading="lazy" src="./marquee-img/aavin.avif" alt="">
-                    </div>
-                    <div class="marquee-item">
-                        <img class="markq" loading="lazy" src="./marquee-img/logo.avif" alt="">
-                    </div>
-                    <div class="marquee-item">
-                        <img class="markq" loading="lazy" src="./marquee-img/main-logo.avif" alt="">
-                    </div>
-                    <div class="marquee-item">
-                        <img class="markq" loading="lazy"
-                            src="./marquee-img/SILAII_Logo_1200x628_f8d77866-c585-4d8c-9683-8018c78822d2_240x.avif"
-                            alt="">
-                    </div>
-                    <div class="marquee-item">
-                        <img class="markq" loading="lazy" src="./marquee-img/nexus.avif" alt="">
-                    </div>
-                    <div class="marquee-item">
-                        <img class="markq" loading="lazy" src="./marquee-img/cetus.avif" alt="">
-                    </div>
-                    <div class="marquee-item">
-                        <img class="markq" loading="lazy" src="./marquee-img/bab.avif" alt="">
-                    </div>
-                    <div class="marquee-item">
-                        <img class="markq" loading="lazy" src="./marquee-img/timeout.avif" alt="">
-                    </div>
-                </div>
-                <div class="marquee-content">
-                    <div class="marquee-item">
-                        <img class="markq" loading="lazy" src="./marquee-img/aavin.avif" alt="">
-                    </div>
-                    <div class="marquee-item">
-                        <img class="markq" loading="lazy" src="./marquee-img/logo.avif" alt="">
-                    </div>
-                    <div class="marquee-item">
-                        <img class="markq" loading="lazy" src="./marquee-img/main-logo.avif" alt="">
-                    </div>
-                    <div class="marquee-item">
-                        <img class="markq" loading="lazy"
-                            src="./marquee-img/SILAII_Logo_1200x628_f8d77866-c585-4d8c-9683-8018c78822d2_240x.avif"
-                            alt="">
-                    </div>
-                    <div class="marquee-item">
-                        <img class="markq" loading="lazy" src="./marquee-img/nexus.avif" alt="">
-                    </div>
-                    <div class="marquee-item">
-                        <img class="markq" loading="lazy" src="./marquee-img/cetus.avif" alt="">
-                    </div>
-                    <div class="marquee-item">
-                        <img class="markq" loading="lazy" src="./marquee-img/bab.avif" alt="">
-                    </div>
-                    <div class="marquee-item">
-                        <img class="markq" loading="lazy" src="./marquee-img/timeout.avif" alt="">
-                    </div>
-                </div>
-                <div class="marquee-content">
-                    <div class="marquee-item">
-                        <img class="markq" loading="lazy" src="./marquee-img/aavin.avif" alt="">
-                    </div>
-                    <div class="marquee-item">
-                        <img class="markq" loading="lazy" src="./marquee-img/logo.avif" alt="">
-                    </div>
-                    <div class="marquee-item">
-                        <img class="markq" loading="lazy" src="./marquee-img/main-logo.avif" alt="">
-                    </div>
-                    <div class="marquee-item">
-                        <img class="markq" loading="lazy"
-                            src="./marquee-img/SILAII_Logo_1200x628_f8d77866-c585-4d8c-9683-8018c78822d2_240x.avif"
-                            alt="">
-                    </div>
-                    <div class="marquee-item">
-                        <img class="markq" loading="lazy" src="./marquee-img/nexus.avif" alt="">
-                    </div>
-                    <div class="marquee-item">
-                        <img class="markq" loading="lazy" src="./marquee-img/cetus.avif" alt="">
-                    </div>
-                    <div class="marquee-item">
-                        <img class="markq" loading="lazy" src="./marquee-img/bab.avif" alt="">
-                    </div>
-                    <div class="marquee-item">
-                        <img class="markq" loading="lazy" src="./marquee-img/timeout.avif" alt="">
-                    </div>
-                </div>
-                <div class="marquee-content">
-                    <div class="marquee-item">
-                        <img class="markq" loading="lazy" src="./marquee-img/aavin.avif" alt="">
-                    </div>
-                    <div class="marquee-item">
-                        <img class="markq" loading="lazy" src="./marquee-img/logo.avif" alt="">
-                    </div>
-                    <div class="marquee-item">
-                        <img class="markq" loading="lazy" src="./marquee-img/main-logo.avif" alt="">
-                    </div>
-                    <div class="marquee-item">
-                        <img class="markq" loading="lazy"
-                            src="./marquee-img/SILAII_Logo_1200x628_f8d77866-c585-4d8c-9683-8018c78822d2_240x.avif"
-                            alt="">
-                    </div>
-                    <div class="marquee-item">
-                        <img class="markq" loading="lazy" src="./marquee-img/nexus.avif" alt="">
-                    </div>
-                    <div class="marquee-item">
-                        <img class="markq" loading="lazy" src="./marquee-img/cetus.avif" alt="">
-                    </div>
-                    <div class="marquee-item">
-                        <img class="markq" loading="lazy" src="./marquee-img/bab.avif" alt="">
-                    </div>
-                    <div class="marquee-item">
-                        <img class="markq" loading="lazy" src="./marquee-img/timeout.avif" alt="">
-                    </div>
-                </div>
+            <div class="line" id="line2">
+              <h1>Built for your <span class="brand">brand.</span></h1>
             </div>
-        </section>
+          </div>
+          <div class="line">
+            <p>Packaging that stays true to your product and your purpose.</p>
+          </div>
+        </div>
+        <div class="cta">
+          <div class="cta-label">
+            <a href="#contact">
+              <p>Enquire About Products</p>
+            </a>
+          </div>
+          <div class="cta-icon">
+            <ion-icon name="arrow-forward-outline"></ion-icon>
+          </div>
+        </div>
+      </div>
 
-
-        <section class="product-container swiper" id="collections">
-            <div class="product-title">
-                <h1 class="titleh1">OUR COLLECTIONS</h1>
-                <div class="title-fraction-mobile"></div>
+      <section class="page2 marquee">
+        <div class="marquee-heading">
+          <h2>our clients</h2>
+        </div>
+        <div class="marquee">
+          <div class="marquee-content">
+            <div class="marquee-item">
+              <img
+                class="markq"
+                loading="lazy"
+                src="./marquee-img/aavin.avif"
+                alt=""
+              />
             </div>
-            <div class="card-wrapper">
-                <ul class="card-list swiper-wrapper">
-                    <li class="card-item swiper-slide">
-                        <div class="card-link">
-                            <img src="./productImg/universal.jpg" alt="card image" class="card-img
-                            ">
-                            <p class="badge">Universal Box</p>
-                            <h2 class="card-title">A strong, all-purpose shipping box designed to protect and transport
-                                various goods safely. Perfect for storage and logistics.</h2>
-                            <a href="#contact"><button>Get a Quote</button></a>
-                        </div>
-                    </li>
-                    <li class="card-item swiper-slide">
-                        <div class="card-link">
-                            <img src="./productImg/mailer box.jpg" alt="card image" class="card-img
-                            ">
-                            <p class="badge">Mailer box</p>
-                            <h2 class="card-title">A stylish and durable box ideal for e-commerce packaging,
-                                subscriptions, and brand presentation. Easy to open and secure for shipping.</h2>
-                            <a href="#contact"><button>Get a Quote</button></a>
-                        </div>
-                    </li>
-                    <li class="card-item swiper-slide">
-                        <div class="card-link">
-                            <img src="./productImg/shipping.png" alt="card image" class="card-img
-                            ">
-                            <p class="badge">Shipping Box</p>
-                            <h2 class="card-title">A sturdy, reliable box built to handle transit and storage. Ideal for
-                                protecting products during shipping across any distance.</h2>
-                            <a href="#contact"><button>Get a Quote</button></a>
-                        </div>
-                    </li>
-                    <li class="card-item swiper-slide">
-                        <div class="card-link">
-                            <img src="./productImg/product4.png" alt="card image" class="card-img
-                            ">
-                            <p class="badge">Product Box</p>
-                            <h2 class="card-title">A custom-designed box tailored to showcase and protect individual
-                                products. Perfect for retail display and brand packaging.</h2>
-                            <a href="#contact"><button>Get a Quote</button></a>
-                        </div>
-                    </li>
-                    <li class="card-item swiper-slide">
-                        <div class="card-link">
-                            <img src="./productImg/juice.png" alt="card image" class="card-img
-                            ">
-                            <p class="badge">Juice box</p>
-                            <h2 class="card-title">A compact, leak-proof box designed to safely store and serve juices.
-                                Ideal for single servings with customizable branding.</h2>
-                            <a href="#contact"><button>Get a Quote</button></a>
-                        </div>
-                    </li>
-                    <li class="card-item swiper-slide">
-                        <div class="card-link">
-                            <img src="./productImg/pizza3.png" alt="card image" class="card-img
-                            ">
-                            <p class="badge">Pizza box</p>
-                            <h2 class="card-title">A sturdy, heat-retaining box made to keep pizzas fresh and secure
-                                during delivery. Designed for easy stacking and branding.</h2>
-                            <a href="#contact"><button>Get a Quote</button></a>
-                        </div>
-                    </li>
-                    <li class="card-item swiper-slide">
-                        <div class="card-link">
-                            <img src="./productImg/handle box.jpg" alt="card image" class="card-img
-                            ">
-                            <p class="badge">Handle box</p>
-                            <h2 class="card-title">A portable box with an integrated handle for convenient carrying.
-                                Great for gifts, takeaway, and retail packaging.</h2>
-                            <a href="#contact"><button>Get a Quote</button></a>
-                        </div>
-                    </li>
-                    <li class="card-item swiper-slide">
-                        <div class="card-link">
-                            <img src="./productImg/shoe.jpg" alt="card image" class="card-img
-                            ">
-                            <p class="badge">Shoe box</p>
-                            <h2 class="card-title">A durable, well-structured box designed to protect and present
-                                footwear. Ideal for retail, storage, and custom branding.
-                            </h2>
-                            <a href="#contact"><button>Get a Quote</button></a>
-                        </div>
-                    </li>
-                    <li class="card-item swiper-slide">
-                        <div class="card-link">
-                            <img src="./productImg/display.png" alt="card image" class="card-img
-                            ">
-                            <p class="badge">Display box</p>
-                            <h2 class="card-title">A versatile box designed for showcasing products in retail
-                                environments. Features customizable inserts and branding options.
-                            </h2>
-                            <a href="#contact"><button>Get a Quote</button></a>
-                        </div>
-                    </li>
-                </ul>
-
-                <div class="swiper-pagination"></div>
-                <div class="swiper-slide-button swiper-button-prev"></div>
-                <div class="swiper-slide-button swiper-button-next"></div>
+            <div class="marquee-item">
+              <img
+                class="markq"
+                loading="lazy"
+                src="./marquee-img/logo.avif"
+                alt=""
+              />
             </div>
-        </section>
-
-        <!-- scroll based animation added -->
-        <!-- frame animation added  -->
-        <section class="page4" id="packaging-process">
-        </section>
-
-        <section class="page5">
-            <!-- Header -->
-            <div class="page5-container">
-                <div class="section-header">
-                    <h2 class="section-title">UNDERSTANDING FLUTE PROFILES</h2>
-                    <div class="section-divider"></div>
-                    <p class="section-description">
-                        Discover the science behind corrugated packaging. Each flute type offers unique advantages
-                        for different applications, from maximum protection to superior printability.
-                    </p>
-                </div>
-
-                <!-- Flute Profiles Grid -->
-                <div class="flute-grid" id="fluteGrid">
-                    <!-- Flute profiles will be generated by JavaScript -->
-                </div>
-
-                <!-- Comparison Chart -->
-                <div class="comparison-chart" id="comparisonChart">
-                    <!-- Comparison chart will be generated by JavaScript -->
-                </div>
+            <div class="marquee-item">
+              <img
+                class="markq"
+                loading="lazy"
+                src="./marquee-img/main-logo.avif"
+                alt=""
+              />
             </div>
-        </section>
-
-
-        <section class="custom-packaging" id="custom-packaging">
-            <div class="custom-packaging-container">
-                <!-- Title and Overview -->
-                <div class="section-header">
-                    <h2><span class="custom1">CUSTOM</span> <span class="packaging1">PACKAGING</span></h2>
-                    <p class="overview">Elevate your brand with our premium custom packaging solutions. Designed to
-                        match your unique requirements, our packaging not only protects your products but also enhances
-                        your brand identity and customer experience.</p>
-                </div>
-
-                <!-- Features Section -->
-                <div class="features-section">
-                    <h3>Customization Options</h3>
-                    <ul class="feature-list">
-                        <li>
-                            <i class="fas fa-palette"></i>
-                            <h4>Material Selection</h4>
-                            <p>Choose from eco-friendly, luxury, or functional materials.</p>
-                        </li>
-                        <li>
-                            <i class="fas fa-ruler-combined"></i>
-                            <h4>Custom Sizing</h4>
-                            <p>Perfectly tailored dimensions for your specific products.</p>
-                        </li>
-                        <li>
-                            <i class="fas fa-paint-brush"></i>
-                            <h4>Design Options</h4>
-                            <p>Embossing, foiling, printing, and custom colors to match your brand.</p>
-                        </li>
-                        <li>
-                            <i class="fas fa-layer-group"></i>
-                            <h4>Premium Finishes</h4>
-                            <p>Matte, gloss, soft-touch, and metallic finishing options.</p>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Interactive Design Tool -->
-                <div class="design-tool-section">
-                    <h3 class="design-tool-h3">Create Your Custom Package</h3>
-                    <p class="design-tool-p">Use our interactive tool to design your package in real-time.</p>
-
-                    <div class="design-tool">
-                        <div class="design-options">
-                            <div class="option-group">
-                                <label>Package Type:</label>
-                                <select id="packageType">
-                                    <option value="box">Box</option>
-                                </select>
-                            </div>
-
-                            <div class="option-group">
-                                <label>Material:</label>
-                                <select id="material">
-                                    <option value="plain" selected>Plain</option>
-                                    <option value="cardboard">Cardboard</option>
-                                    <option value="eco">Eco-Friendly</option>
-                                </select>
-                            </div>
-
-                            <div class="option-group">
-                                <label>Pick Custom Color:</label>
-                                <input type="color" id="packageColor" value="#A48D70">
-                            </div>
-
-                            <div class="option-group">
-                                <label>Finish:</label>
-                                <select id="finish">
-                                    <option value="matte">Matte</option>
-                                    <option value="gloss">Gloss</option>
-                                </select>
-                            </div>
-
-                            <div class="option-group dimensions">
-                                <label>Dimensions (cm):</label>
-                                <div class="dimension-inputs">
-                                    <input type="number" id="width" placeholder="Width" min="1" max="100" value="">
-                                    <input type="number" id="height" placeholder="Height" min="1" max="100" value="">
-                                    <input type="number" id="depth" placeholder="Depth" min="1" max="100" value="">
-                                </div>
-                            </div>
-
-                            <div class="option-group logo-upload">
-                                <label>Upload Logo:</label>
-                                <input type="file" id="logoUpload" accept="image/*" class="file-input">
-                                <label for="logoUpload" class="file-label">
-                                    <i class="fas fa-upload"></i> Choose Logo
-                                </label>
-                                <span id="selected-file-name">No file chosen</span>
-                                <div id="logo-preview-container">
-                                    <img id="logo-preview" src="" alt="Logo Preview">
-                                    <button id="remove-logo" type="button">
-                                        <i class="fas fa-times"></i>
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div class="option-group">
-                                <label>Logo Position:</label>
-                                <select id="logoPosition">
-                                    <option value="front">Front</option>
-                                    <option value="top">Top</option>
-                                    <option value="side">Side</option>
-                                    <option value="none">None</option>
-                                </select>
-                            </div>
-
-                            <div class="option-group">
-                                <label>Logo Size:</label>
-                                <input type="range" id="logoSize" min="10" max="90" value="60">
-                                <span id="logoSizeValue">60%</span>
-                            </div>
-                        </div>
-
-                        <button class="cta-button" id="start-designing">
-                            <i class="fas fa-pencil-alt"></i> Start Designing Now
-                        </button>
-                    </div>
-                </div>
-
-                <!-- 3D Model Viewer Section -->
-                <div class="model-viewer-section" id="model-viewer-section">
-                    <h3 class="model-viewer-h3">Your Custom Package Preview</h3>
-                    <p class="model-viewer-p">Interact with your design - drag to rotate, scroll to zoom</p>
-
-                    <div class="model-viewer-container">
-                        <div id="model-viewer-3d"></div>
-                        <div class="model-controls">
-                            <button id="rotate-left" class="model-control-btn">
-                                <i class="fas fa-undo"></i>
-                            </button>
-                            <button id="reset-view" class="model-control-btn">
-                                <i class="fas fa-sync"></i>
-                            </button>
-                            <button id="rotate-right" class="model-control-btn">
-                                <i class="fas fa-redo"></i>
-                            </button>
-                            <button id="zoom-in" class="model-control-btn">
-                                <i class="fas fa-search-plus"></i>
-                            </button>
-                            <button id="zoom-out" class="model-control-btn">
-                                <i class="fas fa-search-minus"></i>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="model-info">
-                        <p>Your design specifications will appear here after clicking "Start Designing Now"</p>
-                    </div>
-                </div>
-
-                <!-- Gallery -->
-                <div class="gallery-section">
-                    <h3 class="gallery-h3">our factory</h3>
-                    <p class="gallery-p">Browse our portfolio of custom packaging projects</p>
-                    <div class="gallery">
-                        <div class="gallery-item">
-                            <img src="./productImg/place1.jpeg"
-                                alt="Luxury Box Packaging">
-                            <div class="overlay">
-                                <!-- <h4>Luxury Gift Box</h4> -->
-                                <p class="overlay-p">(IN CHENNAI)</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="./productImg/place2.jpeg"
-                                alt="Eco-Friendly Packaging">
-                            <div class="overlay">
-                                <!-- <h4>Eco-Friendly Packaging</h4> -->
-                                <p class="overlay-p">(IN CHENNAI)</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="./productImg/place3.jpeg"
-                                alt="Food Packaging">
-                            <div class="overlay">
-                                <!-- <h4>Food Container Series</h4> -->
-                                <p class="overlay-p">(IN CHENNAI)</p>
-                            </div>
-                        </div>
-                        <div class="gallery-item">
-                            <img src="./productImg/place4.jpeg"
-                                alt="Retail Packaging">
-                            <div class="overlay">
-                                <!-- <h4>Retail Product Line</h4> -->
-                                <p class="overlay-p">(IN CHENNAI)</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Contact Form -->
-                <div class="contact-section" id="contact">
-                    <h3 class="contact-section-h3">Get in Touch</h3>
-                    <p class="contact-section-p">Ready to create your custom packaging? Fill out the form below and
-                        we'll contact you within 24 hours.</p>
-
-                    <form id="contact-form" class="contact-form">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" placeholder="Enter your name" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phone">Phone (optional)</label>
-                            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="company">Company</label>
-                            <input type="text" id="company" name="company" placeholder="Enter your company name">
-                        </div>
-
-                        <div class="form-group full-width">
-                            <label for="project-details">Project Details</label>
-                            <textarea id="project-details" name="project-details" rows="5" required
-                                placeholder="Enter project details with custom dimensions"></textarea>
-                        </div>
-
-                        <div class="form-group full-width">
-                            <label for="package-type">Package Type Needed</label>
-                            <select id="package-type" name="package-type" required>
-                                <option value="" selected disabled>Select a package type</option>
-                                <option value="box">Custom Box</option>
-                                <option value="bag">Custom Bag</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group full-width">
-                            <label for="quantity">Estimated Quantity</label>
-                            <select id="quantity" name="quantity" required>
-                                <option value="" selected disabled>Select a quantity range</option>
-                                <option value="less-than-500">Less than 500</option>
-                                <option value="500-1000">500 - 1,000</option>
-                                <option value="1000-5000">1,000 - 5,000</option>
-                                <option value="5000-10000">5,000 - 10,000</option>
-                                <option value="more-than-10000">More than 10,000</option>
-                            </select>
-                        </div>
-
-                        <button type="submit" class="cta-button">
-                            <i class="fas fa-paper-plane"></i> Send Inquiry
-                        </button>
-                    </form>
-
-                    <div id="form-success" class="form-success">
-                        <i class="fas fa-check-circle"></i>
-                        <h4>Thank you for your inquiry!</h4>
-                        <p>We've received your message and will contact you shortly.</p>
-                    </div>
-
-                    <div id="form-error" class="form-error">
-                        <i class="fas fa-exclamation-circle"></i>
-                        <h4>Oops! Something went wrong.</h4>
-                        <p>Please try again or contact us directly at info@crystalpackaging.com</p>
-                    </div>
-                </div>
-
-                <!-- Call-to-Action -->
-                <div class="cta-section">
-                    <div class="cta-content">
-                        <h3 class="cta-section-h3">Ready to Transform Your Packaging?</h3>
-                        <p class="cta-section-p">Let's create packaging that tells your brand's story and delights your
-                            customers.</p>
-                        <div class="cta-buttons">
-                            <a href="#contact" class="cta-button contact-btn">
-                                <i class="fas fa-envelope"></i> Contact Us
-                            </a>
-                            <a href="tel:+919791191741" class="cta-button call-btn">
-                                <i class="fas fa-phone"></i> Call Now
-                            </a>
-                        </div>
-                    </div>
-                </div>
+            <div class="marquee-item">
+              <img
+                class="markq"
+                loading="lazy"
+                src="./marquee-img/SILAII_Logo_1200x628_f8d77866-c585-4d8c-9683-8018c78822d2_240x.avif"
+                alt=""
+              />
             </div>
-        </section>
-
-
-        <footer class="premium-footer">
-            <div class="footer-container">
-                <!-- Main Footer Content -->
-                <div class="footer-grid">
-
-                    <!-- Brand Identity -->
-                    <div class="footer-section fade-in">
-                        <div class="brand-identity">
-                            <div class="brand-header">
-                                <div class="brand-logo">
-                                    <img src="./a58b23e3-db76-4f75-8d27-67c2a14df4a3.png" alt="" srcset="">
-                                </div>
-                                <h3 class="brand-name">CrystalPackaging</h3>
-                            </div>
-                            <p class="brand-tagline">"Crafting elegance in every package"</p>
-                            <p class="brand-description">
-                                Premium packaging solutions that elevate your brand with sophisticated design,
-                                exceptional quality, and sustainable materials.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Quick Navigation -->
-                    <div class="footer-section fade-in" style="animation-delay: 0.1s;">
-                        <h4 class="footer-title">Quick Links</h4>
-                        <ul class="footer-links">
-                            <li><a href="#collections" class="footer-link">Collections</a></li>
-                            <li><a href="#packaging-process" class="footer-link">Box Model</a></li>
-                            <li><a href="#custom-packaging" class="footer-link">Custom Packaging</a></li>
-                            <li><a href="#contact" class="footer-link">Contact Us</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Contact Information -->
-                    <div class="footer-section fade-in" style="animation-delay: 0.2s;">
-                        <h4 class="footer-title">Contact Us</h4>
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2">
-                                    <path
-                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                                </svg>
-                                <span>+91 9791191741</span>
-                            </div>
-                            <div class="contact-item">
-                                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2">
-                                    <path
-                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                                    <polyline points="22,6 12,13 2,6" />
-                                </svg>
-                                <span>crystalpackagingpro@gmail.com</span>
-                            </div>
-                            <div class="contact-item">
-                                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2">
-                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                                    <circle cx="12" cy="10" r="3" />
-                                </svg>
-                                <ul class="address-list">
-                                    <li>OFFICE - SHARMA NAGAR (CHENNAI)</li>
-                                    <li>UNIT I - MADHAVARAM (CHENNAI)</li>
-                                    <li>UNIT II - ARUMANDHAI (CHENNAI)</li>
-                                    <li>UNIT III - SURAPET (CHENNAI)</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Bottom Section -->
-                <div class="footer-bottom">
-                    <div class="footer-bottom-content">
-                        <!-- Legal Links -->
-                        <div class="legal-links">
-                            <a href="#" class="legal-link">Privacy Policy</a>
-                            <a href="#" class="legal-link">Terms of Service</a>
-                            <a href="#" class="legal-link">Cookie Policy</a>
-                        </div>
-
-                        <!-- Copyright -->
-                        <div class="copyright">
-                            <p class="copyright-text">© 2025 CrystalPackaging. All Rights Reserved.</p>
-                            <p class="copyright-subtext">Crafted with precision and care</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="marquee-item">
+              <img
+                class="markq"
+                loading="lazy"
+                src="./marquee-img/nexus.avif"
+                alt=""
+              />
             </div>
-        </footer>
+            <div class="marquee-item">
+              <img
+                class="markq"
+                loading="lazy"
+                src="./marquee-img/cetus.avif"
+                alt=""
+              />
+            </div>
+            <div class="marquee-item">
+              <img
+                class="markq"
+                loading="lazy"
+                src="./marquee-img/bab.avif"
+                alt=""
+              />
+            </div>
+            <div class="marquee-item">
+              <img
+                class="markq"
+                loading="lazy"
+                src="./marquee-img/timeout.avif"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="marquee-content">
+            <div class="marquee-item">
+              <img
+                class="markq"
+                loading="lazy"
+                src="./marquee-img/aavin.avif"
+                alt=""
+              />
+            </div>
+            <div class="marquee-item">
+              <img
+                class="markq"
+                loading="lazy"
+                src="./marquee-img/logo.avif"
+                alt=""
+              />
+            </div>
+            <div class="marquee-item">
+              <img
+                class="markq"
+                loading="lazy"
+                src="./marquee-img/main-logo.avif"
+                alt=""
+              />
+            </div>
+            <div class="marquee-item">
+              <img
+                class="markq"
+                loading="lazy"
+                src="./marquee-img/SILAII_Logo_1200x628_f8d77866-c585-4d8c-9683-8018c78822d2_240x.avif"
+                alt=""
+              />
+            </div>
+            <div class="marquee-item">
+              <img
+                class="markq"
+                loading="lazy"
+                src="./marquee-img/nexus.avif"
+                alt=""
+              />
+            </div>
+            <div class="marquee-item">
+              <img
+                class="markq"
+                loading="lazy"
+                src="./marquee-img/cetus.avif"
+                alt=""
+              />
+            </div>
+            <div class="marquee-item">
+              <img
+                class="markq"
+                loading="lazy"
+                src="./marquee-img/bab.avif"
+                alt=""
+              />
+            </div>
+            <div class="marquee-item">
+              <img
+                class="markq"
+                loading="lazy"
+                src="./marquee-img/timeout.avif"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="marquee-content">
+            <div class="marquee-item">
+              <img
+                class="markq"
+                loading="lazy"
+                src="./marquee-img/aavin.avif"
+                alt=""
+              />
+            </div>
+            <div class="marquee-item">
+              <img
+                class="markq"
+                loading="lazy"
+                src="./marquee-img/logo.avif"
+                alt=""
+              />
+            </div>
+            <div class="marquee-item">
+              <img
+                class="markq"
+                loading="lazy"
+                src="./marquee-img/main-logo.avif"
+                alt=""
+              />
+            </div>
+            <div class="marquee-item">
+              <img
+                class="markq"
+                loading="lazy"
+                src="./marquee-img/SILAII_Logo_1200x628_f8d77866-c585-4d8c-9683-8018c78822d2_240x.avif"
+                alt=""
+              />
+            </div>
+            <div class="marquee-item">
+              <img
+                class="markq"
+                loading="lazy"
+                src="./marquee-img/nexus.avif"
+                alt=""
+              />
+            </div>
+            <div class="marquee-item">
+              <img
+                class="markq"
+                loading="lazy"
+                src="./marquee-img/cetus.avif"
+                alt=""
+              />
+            </div>
+            <div class="marquee-item">
+              <img
+                class="markq"
+                loading="lazy"
+                src="./marquee-img/bab.avif"
+                alt=""
+              />
+            </div>
+            <div class="marquee-item">
+              <img
+                class="markq"
+                loading="lazy"
+                src="./marquee-img/timeout.avif"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="marquee-content">
+            <div class="marquee-item">
+              <img
+                class="markq"
+                loading="lazy"
+                src="./marquee-img/aavin.avif"
+                alt=""
+              />
+            </div>
+            <div class="marquee-item">
+              <img
+                class="markq"
+                loading="lazy"
+                src="./marquee-img/logo.avif"
+                alt=""
+              />
+            </div>
+            <div class="marquee-item">
+              <img
+                class="markq"
+                loading="lazy"
+                src="./marquee-img/main-logo.avif"
+                alt=""
+              />
+            </div>
+            <div class="marquee-item">
+              <img
+                class="markq"
+                loading="lazy"
+                src="./marquee-img/SILAII_Logo_1200x628_f8d77866-c585-4d8c-9683-8018c78822d2_240x.avif"
+                alt=""
+              />
+            </div>
+            <div class="marquee-item">
+              <img
+                class="markq"
+                loading="lazy"
+                src="./marquee-img/nexus.avif"
+                alt=""
+              />
+            </div>
+            <div class="marquee-item">
+              <img
+                class="markq"
+                loading="lazy"
+                src="./marquee-img/cetus.avif"
+                alt=""
+              />
+            </div>
+            <div class="marquee-item">
+              <img
+                class="markq"
+                loading="lazy"
+                src="./marquee-img/bab.avif"
+                alt=""
+              />
+            </div>
+            <div class="marquee-item">
+              <img
+                class="markq"
+                loading="lazy"
+                src="./marquee-img/timeout.avif"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="marquee-content">
+            <div class="marquee-item">
+              <img
+                class="markq"
+                loading="lazy"
+                src="./marquee-img/aavin.avif"
+                alt=""
+              />
+            </div>
+            <div class="marquee-item">
+              <img
+                class="markq"
+                loading="lazy"
+                src="./marquee-img/logo.avif"
+                alt=""
+              />
+            </div>
+            <div class="marquee-item">
+              <img
+                class="markq"
+                loading="lazy"
+                src="./marquee-img/main-logo.avif"
+                alt=""
+              />
+            </div>
+            <div class="marquee-item">
+              <img
+                class="markq"
+                loading="lazy"
+                src="./marquee-img/SILAII_Logo_1200x628_f8d77866-c585-4d8c-9683-8018c78822d2_240x.avif"
+                alt=""
+              />
+            </div>
+            <div class="marquee-item">
+              <img
+                class="markq"
+                loading="lazy"
+                src="./marquee-img/nexus.avif"
+                alt=""
+              />
+            </div>
+            <div class="marquee-item">
+              <img
+                class="markq"
+                loading="lazy"
+                src="./marquee-img/cetus.avif"
+                alt=""
+              />
+            </div>
+            <div class="marquee-item">
+              <img
+                class="markq"
+                loading="lazy"
+                src="./marquee-img/bab.avif"
+                alt=""
+              />
+            </div>
+            <div class="marquee-item">
+              <img
+                class="markq"
+                loading="lazy"
+                src="./marquee-img/timeout.avif"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
+      <section class="product-container swiper" id="collections">
+        <div class="product-title">
+          <h1 class="titleh1">OUR COLLECTIONS</h1>
+          <div class="title-fraction-mobile"></div>
+        </div>
+        <div class="card-wrapper">
+          <ul class="card-list swiper-wrapper">
+            <li class="card-item swiper-slide">
+              <div class="card-link">
+                <img
+                  src="./productImg/universal.jpg"
+                  alt="card image"
+                  class="card-img"
+                />
+                <p class="badge">Universal Box</p>
+                <h2 class="card-title">
+                  A strong, all-purpose shipping box designed to protect and
+                  transport various goods safely. Perfect for storage and
+                  logistics.
+                </h2>
+                <a href="#contact"><button>Get a Quote</button></a>
+              </div>
+            </li>
+            <li class="card-item swiper-slide">
+              <div class="card-link">
+                <img
+                  src="./productImg/mailer box.jpg"
+                  alt="card image"
+                  class="card-img"
+                />
+                <p class="badge">Mailer box</p>
+                <h2 class="card-title">
+                  A stylish and durable box ideal for e-commerce packaging,
+                  subscriptions, and brand presentation. Easy to open and secure
+                  for shipping.
+                </h2>
+                <a href="#contact"><button>Get a Quote</button></a>
+              </div>
+            </li>
+            <li class="card-item swiper-slide">
+              <div class="card-link">
+                <img
+                  src="./productImg/shipping.png"
+                  alt="card image"
+                  class="card-img"
+                />
+                <p class="badge">Shipping Box</p>
+                <h2 class="card-title">
+                  A sturdy, reliable box built to handle transit and storage.
+                  Ideal for protecting products during shipping across any
+                  distance.
+                </h2>
+                <a href="#contact"><button>Get a Quote</button></a>
+              </div>
+            </li>
+            <li class="card-item swiper-slide">
+              <div class="card-link">
+                <img
+                  src="./productImg/product4.png"
+                  alt="card image"
+                  class="card-img"
+                />
+                <p class="badge">Product Box</p>
+                <h2 class="card-title">
+                  A custom-designed box tailored to showcase and protect
+                  individual products. Perfect for retail display and brand
+                  packaging.
+                </h2>
+                <a href="#contact"><button>Get a Quote</button></a>
+              </div>
+            </li>
+            <li class="card-item swiper-slide">
+              <div class="card-link">
+                <img
+                  src="./productImg/juice.png"
+                  alt="card image"
+                  class="card-img"
+                />
+                <p class="badge">Juice box</p>
+                <h2 class="card-title">
+                  A compact, leak-proof box designed to safely store and serve
+                  juices. Ideal for single servings with customizable branding.
+                </h2>
+                <a href="#contact"><button>Get a Quote</button></a>
+              </div>
+            </li>
+            <li class="card-item swiper-slide">
+              <div class="card-link">
+                <img
+                  src="./productImg/pizza3.png"
+                  alt="card image"
+                  class="card-img"
+                />
+                <p class="badge">Pizza box</p>
+                <h2 class="card-title">
+                  A sturdy, heat-retaining box made to keep pizzas fresh and
+                  secure during delivery. Designed for easy stacking and
+                  branding.
+                </h2>
+                <a href="#contact"><button>Get a Quote</button></a>
+              </div>
+            </li>
+            <li class="card-item swiper-slide">
+              <div class="card-link">
+                <img
+                  src="./productImg/handle box.jpg"
+                  alt="card image"
+                  class="card-img"
+                />
+                <p class="badge">Handle box</p>
+                <h2 class="card-title">
+                  A portable box with an integrated handle for convenient
+                  carrying. Great for gifts, takeaway, and retail packaging.
+                </h2>
+                <a href="#contact"><button>Get a Quote</button></a>
+              </div>
+            </li>
+            <li class="card-item swiper-slide">
+              <div class="card-link">
+                <img
+                  src="./productImg/shoe.jpg"
+                  alt="card image"
+                  class="card-img"
+                />
+                <p class="badge">Shoe box</p>
+                <h2 class="card-title">
+                  A durable, well-structured box designed to protect and present
+                  footwear. Ideal for retail, storage, and custom branding.
+                </h2>
+                <a href="#contact"><button>Get a Quote</button></a>
+              </div>
+            </li>
+            <li class="card-item swiper-slide">
+              <div class="card-link">
+                <img
+                  src="./productImg/display.png"
+                  alt="card image"
+                  class="card-img"
+                />
+                <p class="badge">Display box</p>
+                <h2 class="card-title">
+                  A versatile box designed for showcasing products in retail
+                  environments. Features customizable inserts and branding
+                  options.
+                </h2>
+                <a href="#contact"><button>Get a Quote</button></a>
+              </div>
+            </li>
+          </ul>
 
+          <div class="swiper-pagination"></div>
+          <div class="swiper-slide-button swiper-button-prev"></div>
+          <div class="swiper-slide-button swiper-button-next"></div>
+        </div>
+      </section>
+
+      <!-- scroll based animation added -->
+      <!-- frame animation added  -->
+      <section class="page4" id="packaging-process"></section>
+
+      <section class="page5">
+        <!-- Header -->
+        <div class="page5-container">
+          <div class="section-header">
+            <h2 class="section-title">UNDERSTANDING FLUTE PROFILES</h2>
+            <div class="section-divider"></div>
+            <p class="section-description">
+              Discover the science behind corrugated packaging. Each flute type
+              offers unique advantages for different applications, from maximum
+              protection to superior printability.
+            </p>
+          </div>
+
+          <!-- Flute Profiles Grid -->
+          <div class="flute-grid" id="fluteGrid">
+            <!-- Flute profiles will be generated by JavaScript -->
+          </div>
+
+          <!-- Comparison Chart -->
+          <div class="comparison-chart" id="comparisonChart">
+            <!-- Comparison chart will be generated by JavaScript -->
+          </div>
+        </div>
+      </section>
+
+      <section class="custom-packaging" id="custom-packaging">
+        <div class="custom-packaging-container">
+          <!-- Title and Overview -->
+          <div class="section-header">
+            <h2>
+              <span class="custom1">CUSTOM</span>
+              <span class="packaging1">PACKAGING</span>
+            </h2>
+            <p class="overview">
+              Elevate your brand with our premium custom packaging solutions.
+              Designed to match your unique requirements, our packaging not only
+              protects your products but also enhances your brand identity and
+              customer experience.
+            </p>
+          </div>
+
+          <!-- Features Section -->
+          <div class="features-section">
+            <h3>Customization Options</h3>
+            <ul class="feature-list">
+              <li>
+                <i class="fas fa-palette"></i>
+                <h4>Material Selection</h4>
+                <p>
+                  Choose from eco-friendly, luxury, or functional materials.
+                </p>
+              </li>
+              <li>
+                <i class="fas fa-ruler-combined"></i>
+                <h4>Custom Sizing</h4>
+                <p>Perfectly tailored dimensions for your specific products.</p>
+              </li>
+              <li>
+                <i class="fas fa-paint-brush"></i>
+                <h4>Design Options</h4>
+                <p>
+                  Embossing, foiling, printing, and custom colors to match your
+                  brand.
+                </p>
+              </li>
+              <li>
+                <i class="fas fa-layer-group"></i>
+                <h4>Premium Finishes</h4>
+                <p>Matte, gloss, soft-touch, and metallic finishing options.</p>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Interactive Design Tool -->
+          <div class="design-tool-section">
+            <h3 class="design-tool-h3">Create Your Custom Package</h3>
+            <p class="design-tool-p">
+              Use our interactive tool to design your package in real-time.
+            </p>
+
+            <div class="design-tool">
+              <div class="design-options">
+                <div class="option-group">
+                  <label>Package Type:</label>
+                  <select id="packageType">
+                    <option value="box">Box</option>
+                  </select>
+                </div>
+
+                <div class="option-group">
+                  <label>Material:</label>
+                  <select id="material">
+                    <option value="plain" selected>Plain</option>
+                    <option value="cardboard">Cardboard</option>
+                    <option value="eco">Eco-Friendly</option>
+                  </select>
+                </div>
+
+                <div class="option-group">
+                  <label>Pick Custom Color:</label>
+                  <input type="color" id="packageColor" value="#A48D70" />
+                </div>
+
+                <div class="option-group">
+                  <label>Finish:</label>
+                  <select id="finish">
+                    <option value="matte">Matte</option>
+                    <option value="gloss">Gloss</option>
+                  </select>
+                </div>
+
+                <div class="option-group dimensions">
+                  <label>Dimensions (cm):</label>
+                  <div class="dimension-inputs">
+                    <input
+                      type="number"
+                      id="width"
+                      placeholder="Width"
+                      min="1"
+                      max="100"
+                      value=""
+                    />
+                    <input
+                      type="number"
+                      id="height"
+                      placeholder="Height"
+                      min="1"
+                      max="100"
+                      value=""
+                    />
+                    <input
+                      type="number"
+                      id="depth"
+                      placeholder="Depth"
+                      min="1"
+                      max="100"
+                      value=""
+                    />
+                  </div>
+                </div>
+
+                <div class="option-group logo-upload">
+                  <label>Upload Logo:</label>
+                  <input
+                    type="file"
+                    id="logoUpload"
+                    accept="image/*"
+                    class="file-input"
+                  />
+                  <label for="logoUpload" class="file-label">
+                    <i class="fas fa-upload"></i> Choose Logo
+                  </label>
+                  <span id="selected-file-name">No file chosen</span>
+                  <div id="logo-preview-container">
+                    <img id="logo-preview" src="" alt="Logo Preview" />
+                    <button id="remove-logo" type="button">
+                      <i class="fas fa-times"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="option-group">
+                  <label>Logo Position:</label>
+                  <select id="logoPosition">
+                    <option value="front">Front</option>
+                    <option value="top">Top</option>
+                    <option value="side">Side</option>
+                    <option value="none">None</option>
+                  </select>
+                </div>
+
+                <div class="option-group">
+                  <label>Logo Size:</label>
+                  <input
+                    type="range"
+                    id="logoSize"
+                    min="10"
+                    max="90"
+                    value="60"
+                  />
+                  <span id="logoSizeValue">60%</span>
+                </div>
+              </div>
+
+              <button class="cta-button" id="start-designing">
+                <i class="fas fa-pencil-alt"></i> Start Designing Now
+              </button>
+            </div>
+          </div>
+
+          <!-- 3D Model Viewer Section -->
+          <div class="model-viewer-section" id="model-viewer-section">
+            <h3 class="model-viewer-h3">Your Custom Package Preview</h3>
+            <p class="model-viewer-p">
+              Interact with your design - drag to rotate, scroll to zoom
+            </p>
+
+            <div class="model-viewer-container">
+              <div id="model-viewer-3d"></div>
+              <div class="model-controls">
+                <button id="rotate-left" class="model-control-btn">
+                  <i class="fas fa-undo"></i>
+                </button>
+                <button id="reset-view" class="model-control-btn">
+                  <i class="fas fa-sync"></i>
+                </button>
+                <button id="rotate-right" class="model-control-btn">
+                  <i class="fas fa-redo"></i>
+                </button>
+                <button id="zoom-in" class="model-control-btn">
+                  <i class="fas fa-search-plus"></i>
+                </button>
+                <button id="zoom-out" class="model-control-btn">
+                  <i class="fas fa-search-minus"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="model-info">
+              <p>
+                Your design specifications will appear here after clicking
+                "Start Designing Now"
+              </p>
+            </div>
+          </div>
+
+          <!-- Gallery -->
+          <div class="gallery-section">
+            <h3 class="gallery-h3">our factory</h3>
+            <p class="gallery-p">
+              Browse our portfolio of custom packaging projects
+            </p>
+            <div class="gallery">
+              <div class="gallery-item">
+                <img
+                  src="./productImg/place1.jpeg"
+                  alt="Luxury Box Packaging"
+                />
+                <div class="overlay">
+                  <!-- <h4>Luxury Gift Box</h4> -->
+                  <p class="overlay-p">(IN CHENNAI)</p>
+                </div>
+              </div>
+              <div class="gallery-item">
+                <img
+                  src="./productImg/place2.jpeg"
+                  alt="Eco-Friendly Packaging"
+                />
+                <div class="overlay">
+                  <!-- <h4>Eco-Friendly Packaging</h4> -->
+                  <p class="overlay-p">(IN CHENNAI)</p>
+                </div>
+              </div>
+              <div class="gallery-item">
+                <img src="./productImg/place3.jpeg" alt="Food Packaging" />
+                <div class="overlay">
+                  <!-- <h4>Food Container Series</h4> -->
+                  <p class="overlay-p">(IN CHENNAI)</p>
+                </div>
+              </div>
+              <div class="gallery-item">
+                <img src="./productImg/place4.jpeg" alt="Retail Packaging" />
+                <div class="overlay">
+                  <!-- <h4>Retail Product Line</h4> -->
+                  <p class="overlay-p">(IN CHENNAI)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="contact-section" id="contact">
+            <h3 class="contact-section-h3">Get in Touch</h3>
+            <p class="contact-section-p">
+              Ready to create your custom packaging? Fill out the form below and
+              we'll contact you within 24 hours.
+            </p>
+
+            <form id="contact-form" class="contact-form">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Enter your name"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Enter your email"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone (optional)</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="Enter your phone number"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="company">Company</label>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  placeholder="Enter your company name"
+                />
+              </div>
+
+              <div class="form-group full-width">
+                <label for="project-details">Project Details</label>
+                <textarea
+                  id="project-details"
+                  name="project-details"
+                  rows="5"
+                  required
+                  placeholder="Enter project details with custom dimensions"
+                ></textarea>
+              </div>
+
+              <div class="form-group full-width">
+                <label for="package-type">Package Type Needed</label>
+                <select id="package-type" name="package-type" required>
+                  <option value="" selected disabled>
+                    Select a package type
+                  </option>
+                  <option value="box">Custom Box</option>
+                  <option value="bag">Custom Bag</option>
+                </select>
+              </div>
+
+              <div class="form-group full-width">
+                <label for="quantity">Estimated Quantity</label>
+                <select id="quantity" name="quantity" required>
+                  <option value="" selected disabled>
+                    Select a quantity range
+                  </option>
+                  <option value="less-than-500">Less than 500</option>
+                  <option value="500-1000">500 - 1,000</option>
+                  <option value="1000-5000">1,000 - 5,000</option>
+                  <option value="5000-10000">5,000 - 10,000</option>
+                  <option value="more-than-10000">More than 10,000</option>
+                </select>
+              </div>
+
+              <button type="submit" class="cta-button">
+                <i class="fas fa-paper-plane"></i> Send Inquiry
+              </button>
+            </form>
+
+            <div id="form-success" class="form-success">
+              <i class="fas fa-check-circle"></i>
+              <h4>Thank you for your inquiry!</h4>
+              <p>We've received your message and will contact you shortly.</p>
+            </div>
+
+            <div id="form-error" class="form-error">
+              <i class="fas fa-exclamation-circle"></i>
+              <h4>Oops! Something went wrong.</h4>
+              <p>
+                Please try again or contact us directly at
+                info@crystalpackaging.com
+              </p>
+            </div>
+          </div>
+
+          <!-- Call-to-Action -->
+          <div class="cta-section">
+            <div class="cta-content">
+              <h3 class="cta-section-h3">Ready to Transform Your Packaging?</h3>
+              <p class="cta-section-p">
+                Let's create packaging that tells your brand's story and
+                delights your customers.
+              </p>
+              <div class="cta-buttons">
+                <a href="#contact" class="cta-button contact-btn">
+                  <i class="fas fa-envelope"></i> Contact Us
+                </a>
+                <a href="tel:+919791191741" class="cta-button call-btn">
+                  <i class="fas fa-phone"></i> Call Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="premium-footer">
+        <div class="footer-container">
+          <!-- Main Footer Content -->
+          <div class="footer-grid">
+            <!-- Brand Identity -->
+            <div class="footer-section fade-in">
+              <div class="brand-identity">
+                <div class="brand-header">
+                  <div class="brand-logo">
+                    <img
+                      src="./a58b23e3-db76-4f75-8d27-67c2a14df4a3.png"
+                      alt=""
+                      srcset=""
+                    />
+                  </div>
+                  <h3 class="brand-name">CrystalPackaging</h3>
+                </div>
+                <p class="brand-tagline">
+                  "Crafting elegance in every package"
+                </p>
+                <p class="brand-description">
+                  Premium packaging solutions that elevate your brand with
+                  sophisticated design, exceptional quality, and sustainable
+                  materials.
+                </p>
+              </div>
+            </div>
+
+            <!-- Quick Navigation -->
+            <div class="footer-section fade-in" style="animation-delay: 0.1s">
+              <h4 class="footer-title">Quick Links</h4>
+              <ul class="footer-links">
+                <li>
+                  <a href="#collections" class="footer-link">Collections</a>
+                </li>
+                <li>
+                  <a href="#packaging-process" class="footer-link">Box Model</a>
+                </li>
+                <li>
+                  <a href="#custom-packaging" class="footer-link"
+                    >Custom Packaging</a
+                  >
+                </li>
+                <li><a href="#contact" class="footer-link">Contact Us</a></li>
+              </ul>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="footer-section fade-in" style="animation-delay: 0.2s">
+              <h4 class="footer-title">Contact Us</h4>
+              <div class="contact-info">
+                <div class="contact-item">
+                  <svg
+                    class="contact-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                    />
+                  </svg>
+                  <span>+91 9791191741</span>
+                </div>
+                <div class="contact-item">
+                  <svg
+                    class="contact-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                    />
+                    <polyline points="22,6 12,13 2,6" />
+                  </svg>
+                  <span>crystalpackagingpro@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                  <svg
+                    class="contact-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                  <ul class="address-list">
+                    <li>OFFICE - SHARMA NAGAR (CHENNAI)</li>
+                    <li>UNIT I - MADHAVARAM (CHENNAI)</li>
+                    <li>UNIT II - ARUMANDHAI (CHENNAI)</li>
+                    <li>UNIT III - SURAPET (CHENNAI)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Section -->
+          <div class="footer-bottom">
+            <div class="footer-bottom-content">
+              <!-- Legal Links -->
+              <div class="legal-links">
+                <a href="#" class="legal-link">Privacy Policy</a>
+                <a href="#" class="legal-link">Terms of Service</a>
+                <a href="#" class="legal-link">Cookie Policy</a>
+              </div>
+
+              <!-- Copyright -->
+              <div class="copyright">
+                <p class="copyright-text">
+                  © 2025 CrystalPackaging. All Rights Reserved.
+                </p>
+                <p class="copyright-subtext">Crafted with precision and care</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
     </main>
 
     <!-- Load GSAP and plugins first -->
@@ -808,22 +1199,30 @@
 
     <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"
+    ></script>
     <script type="text/javascript">
-        (function () {
-            emailjs.init("pkOUl4YZ6YjXtpbkc");
-        })();
+      (function () {
+        emailjs.init("5Hpq_7FKHWrRBjumI");
+      })();
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/lenis@1.3.4/dist/lenis.min.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
 
     <script type="module" src="script.js"></script>
     <script src="flute.js"></script>
     <script src="custom-packaging-section.js"></script>
     <script src="chatbot.js"></script>
-</body>
-
+  </body>
 </html>
